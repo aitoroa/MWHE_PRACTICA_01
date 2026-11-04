@@ -1,11 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ENTRE HILOS</title>
-    <link rel="stylesheet" href="css/style.css" />
-
+    <title>ENTRE HILOS · Mercería y telas en Malasaña</title>
+    <meta
+      name="description"
+      content="Entre Hilos: telas por metros, mercería, kits de costura y talleres en el barrio de Malasaña, Madrid."
+    />
     <link
       rel="icon"
       type="image/png"
@@ -25,11 +27,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Work+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Jost:wght@300..600&display=swap"
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
+      /* Modo oscuro con la clase .dark en <html> (la pone js/interfaz.js) */
+      @custom-variant dark (&:where(.dark, .dark *));
+
       @theme static {
         --color-primary: "#F2E9E4";
         --color-secondary: "#D9CFC1";
@@ -39,9 +56,6 @@
         --font-serif: "Fraunces", Georgia, serif;
       }
     </style>
-
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <header></header>
