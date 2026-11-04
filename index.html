@@ -3,19 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ENTRE HILOS</title>
+    <title>ENTRE HILOS · Mercería y telas en Malasaña</title>
+    <meta
+      name="description"
+      content="Entre Hilos: telas por metros, mercería, kits de costura y talleres en el barrio de Malasaña, Madrid."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/manifest.json" />
 
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Work+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Jost:wght@300..600&display=swap"
       rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      /* Modo oscuro con la clase .dark en <html> (la pone js/interfaz.js) */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      @theme static {
+        --color-primary: "#F2E9E4";
+        --color-secondary: "#D9CFC1";
+        --color-accent: "#A7A5A5";
+        --color-neutral: "#3B3B3B";
+        --font-sans: "EB Garamond", "Work Sans", sans-serif;
+        --font-serif: "Fraunces", Georgia, serif;
+      }
+    </style>
   </head>
   <body>
     <header></header>
@@ -24,9 +64,292 @@
 
       <section id="telas"></section>
 
-      <section id="crea-tu-kit"></section>
+      <section
+        id="crea-tu-kit"
+        class="bg-oliva py-24 text-crema dark:bg-oliva-oscuro md:py-32"
+        aria-labelledby="titulo-kit"
+      >
+        <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <div data-aos="fade-up">
+              <p class="etiqueta-seccion">Crea tu kit</p>
+              <h2
+                id="titulo-kit"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                tú eliges,
+                <span class="font-acento font-normal tracking-normal italic"
+                  >nosotras</span
+                >
+                lo preparamos
+              </h2>
+              <p class="mt-6 max-w-lg text-lg text-crema/85">
+                Elige qué quieres coser y te dejamos en una bolsa la tela
+                cortada, el patrón y todo lo que necesitas. Lo recoges en tienda
+                en 24 horas.
+              </p>
+            </div>
 
-      <section id="segunda-vida"></section>
+            <form id="form-kit" class="mt-12 space-y-10" novalidate>
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit">
+                  <span>1</span> ¿Qué quieres coser?
+                </legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="tote"
+                      data-nombre="Bolsa tote"
+                      data-metros="0.8"
+                      data-precio="4"
+                      checked
+                    />
+                    Bolsa tote
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="delantal"
+                      data-nombre="Delantal"
+                      data-metros="1.2"
+                      data-precio="6"
+                    />
+                    Delantal
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="cojin"
+                      data-nombre="Funda de cojín"
+                      data-metros="0.6"
+                      data-precio="3"
+                    />
+                    Funda de cojín
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="neceser"
+                      data-nombre="Neceser"
+                      data-metros="0.4"
+                      data-precio="3"
+                    />
+                    Neceser
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit"><span>2</span> Elige la tela</legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="lino"
+                      data-nombre="Lino arena"
+                      data-precio="18.90"
+                      data-muestra="muestra-lino"
+                      checked
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-lino.svg"
+                      alt=""
+                    />
+                    Lino arena
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="vichy"
+                      data-nombre="Vichy merienda"
+                      data-precio="9.50"
+                      data-muestra="muestra-vichy"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-vichy.svg"
+                      alt=""
+                    />
+                    Vichy merienda
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="lunares"
+                      data-nombre="Lunares verbena"
+                      data-precio="12.50"
+                      data-muestra="muestra-lunares"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-lunares.svg"
+                      alt=""
+                    />
+                    Lunares verbena
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="rayas"
+                      data-nombre="Rayas cantábrico"
+                      data-precio="11"
+                      data-muestra="muestra-rayas"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-rayas.svg"
+                      alt=""
+                    />
+                    Rayas cantábrico
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit">
+                  <span>3</span> Añade lo que te falte
+                </legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="hilo"
+                      data-nombre="Hilo a juego"
+                      data-precio="2.50"
+                      checked
+                    />
+                    Hilo a juego · 2,50 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="cremallera"
+                      data-nombre="Cremallera"
+                      data-precio="1.80"
+                    />
+                    Cremallera · 1,80 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="botones"
+                      data-nombre="Botones de nácar"
+                      data-precio="4.50"
+                    />
+                    Botones de nácar · 4,50 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="clase"
+                      data-nombre="Clase exprés (30 min)"
+                      data-precio="10"
+                    />
+                    Clase exprés 30 min · 10 €
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <aside
+            class="lg:col-span-5"
+            aria-labelledby="titulo-tu-kit"
+            data-aos="fade-up"
+          >
+            <div
+              class="tarjeta-kit sticky top-28 rounded-sm bg-crema p-6 text-tinta shadow-2xl dark:bg-noche dark:text-crema md:p-8"
+            >
+              <div
+                class="costura relative aspect-[5/3] overflow-hidden rounded-sm"
+                aria-hidden="true"
+              >
+                <img
+                  id="kit-muestra"
+                  src="assets/muestras/muestra-lino.svg"
+                  alt=""
+                  width="400"
+                  height="500"
+                  class="size-full object-cover"
+                />
+              </div>
+              <div class="mt-6 flex items-baseline justify-between gap-4">
+                <h3
+                  id="titulo-tu-kit"
+                  class="font-titulo text-3xl font-extrabold lowercase"
+                >
+                  tu kit
+                </h3>
+                <p
+                  id="kit-proyecto"
+                  class="font-acento text-2xl text-terracota italic"
+                >
+                  Bolsa tote
+                </p>
+              </div>
+              <ul
+                id="kit-lista"
+                class="mt-4 divide-y divide-dashed divide-tinta/25 border-y border-dashed border-tinta/25 text-sm dark:divide-crema/25 dark:border-crema/25"
+              >
+                <li class="flex justify-between py-2">
+                  <span>Lino arena · 0,8 m</span><span>15,12 €</span>
+                </li>
+              </ul>
+              <div class="mt-5 flex items-end justify-between">
+                <span class="text-xs tracking-[0.25em] uppercase">Total</span>
+                <output
+                  id="kit-total"
+                  form="form-kit"
+                  class="font-titulo text-5xl font-extrabold"
+                  aria-live="polite"
+                  >21,62 €</output
+                >
+              </div>
+              <button
+                id="boton-reservar-kit"
+                type="submit"
+                form="form-kit"
+                class="boton boton-primario mt-6 w-full justify-center"
+              >
+                Reservar mi kit
+              </button>
+              <p
+                id="kit-mensaje"
+                class="mt-4 hidden text-center text-sm text-oliva dark:text-rosa-hilo"
+                role="status"
+              ></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="talleres"></section>
 
       <section id="novedades"></section>
 
