@@ -39,14 +39,14 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background-color: color-mix(in srgb, var(--superficie) 88%, transparent);
-    backdrop-filter: blur(12px);
+    background-color: color-mix(in srgb, var(--superficie) 70%, transparent);
+    backdrop-filter: blur(15px) saturate(180%);
     opacity: 0;
     transition: opacity 0.4s ease;
   }
 
   .cabecera-con-fondo {
-    box-shadow: 0 1px 0 var(--linea);
+    box-shadow: 0 10px 30px -12px rgb(41 37 33 / 0.25);
   }
   .cabecera-con-fondo::before {
     opacity: 1;
