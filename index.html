@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -55,7 +55,7 @@
         --color-tinta: #292521;
         --color-rosa-hilo: #c98e94;
 
-        /* Auxiliares (para modo oscuro) */
+        /* Auxiliares (para el modo oscuro) */
         --color-lino: #e9dfcf;
         --color-noche: #1c1916;
         --color-oliva-oscuro: #4e5137;
@@ -65,7 +65,7 @@
         --font-texto: "Jost", "Helvetica Neue", Arial, sans-serif;
         --font-acento: "Instrument Serif", Georgia, serif;
 
-        /* Animaciones*/
+        /* Animaciones */
         --animate-bajar-menu: bajar-menu 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
         --animate-bajar-linea: bajar-linea 2s ease-in-out infinite;
         --animate-flotar: flotar 7s ease-in-out infinite;
@@ -100,20 +100,23 @@
 
     <header
       id="cabecera"
-      class="cabecera cabecera-oculta fixed inset-x-0 top-0 z-50"
+      class="cabecera fixed inset-x-0 top-0 z-50 -translate-y-full transition-[translate,box-shadow] duration-400 focus-within:translate-y-0"
     >
       <div class="mx-auto flex max-w-7xl items-center gap-3 px-5 py-4 md:px-8">
         <a
           href="#portada"
           class="logo mr-auto font-titulo text-2xl leading-none font-extrabold tracking-tight lowercase md:text-3xl"
           aria-label="Entre Hilos, volver al inicio"
-          >entre hilos<span class="punto" aria-hidden="true"></span
+          >entre hilos<span
+            class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo"
+            aria-hidden="true"
+          ></span
         ></a>
 
         <nav aria-label="Principal">
           <ul
             id="menu"
-            class="menu-desplegable absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
+            class="animate-bajar-menu lg:animate-none absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
           >
             <li>
               <a
@@ -182,11 +185,19 @@
           type="button"
           aria-expanded="false"
           aria-controls="menu"
-          class="boton-menu grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta lg:hidden"
+          class="boton-menu group grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta lg:hidden"
         >
-          <span class="hamburguesa" aria-hidden="true"
-            ><span></span><span></span><span></span
-          ></span>
+          <span class="grid w-[18px] gap-1" aria-hidden="true">
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:translate-y-1.5 group-aria-expanded:rotate-45"
+            ></span>
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:opacity-0"
+            ></span>
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:-translate-y-1.5 group-aria-expanded:-rotate-45"
+            ></span>
+          </span>
           <span id="texto-boton-menu" class="sr-only">Abrir menú</span>
         </button>
       </div>
@@ -215,7 +226,10 @@
             class="font-titulo text-[clamp(3.5rem,14vw,10rem)] leading-none font-extrabold tracking-tight text-tinta lowercase"
             data-aos="fade-up"
           >
-            entre hilos<span class="punto" aria-hidden="true"></span>
+            entre hilos<span
+              class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo"
+              aria-hidden="true"
+            ></span>
           </p>
         </div>
 
@@ -242,7 +256,10 @@
           class="indicador-bajar absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-xs tracking-[0.35em] uppercase transition hover:text-rosa-hilo focus-visible:text-rosa-hilo"
         >
           Descubre
-          <span class="linea-bajar" aria-hidden="true"></span>
+          <span
+            class="block h-12 w-[1.5px] origin-top bg-current animate-bajar-linea"
+            aria-hidden="true"
+          ></span>
         </a>
       </section>
 
@@ -252,7 +269,7 @@
         aria-labelledby="titulo-portada"
       >
         <svg
-          class="hilo-portada pointer-events-none absolute inset-x-0 top-40 z-0 w-full md:top-56"
+          class="hilo-portada pointer-events-none opacity-90 absolute inset-x-0 top-40 z-0 w-full md:top-56"
           viewBox="0 0 1200 300"
           fill="none"
           aria-hidden="true"
@@ -268,7 +285,7 @@
           class="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-12 lg:items-end"
         >
           <div class="lg:col-span-7">
-            <p class="etiqueta-seccion" data-aos="fade-up">
+            <p class="text-xs tracking-[0.35em] uppercase" data-aos="fade-up">
               Mercería y telas · Malasaña, Madrid
             </p>
             <h1
@@ -282,7 +299,10 @@
                 class="font-acento font-normal tracking-normal text-terracota italic"
                 >por un</span
               >
-              hilo<span class="punto punto-latido" aria-hidden="true"></span>
+              hilo<span
+                class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo animate-latido"
+                aria-hidden="true"
+              ></span>
             </h1>
             <p
               class="mt-8 max-w-md text-lg leading-relaxed text-tinta/80 dark:text-crema/80"
@@ -298,9 +318,25 @@
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <a href="#telas" class="boton boton-primario">Ver telas</a>
-              <a href="#crea-tu-kit" class="boton boton-secundario"
-                >Crea tu kit</a
+              <a
+                href="#telas"
+                class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-7 bg-terracota text-crema hover:bg-tinta hover:shadow-lg focus-visible:bg-tinta dark:hover:bg-rosa-hilo dark:hover:text-tinta dark:focus-visible:bg-rosa-hilo dark:focus-visible:text-tinta"
+                >Ver telas
+                <span
+                  class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                  aria-hidden="true"
+                  >→</span
+                ></a
+              >
+              <a
+                href="#crea-tu-kit"
+                class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-7 border-[1.5px] border-current hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
+                >Crea tu kit
+                <span
+                  class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                  aria-hidden="true"
+                  >→</span
+                ></a
               >
             </div>
           </div>
@@ -310,7 +346,7 @@
             aria-hidden="true"
           >
             <div
-              class="costura flotar absolute top-0 right-0 h-[72%] w-[62%] overflow-hidden rounded-sm shadow-2xl"
+              class="costura animate-flotar absolute top-0 right-0 h-[72%] w-[62%] overflow-hidden rounded-sm shadow-2xl"
             >
               <img
                 src="assets/muestras/muestra-lino.svg"
@@ -321,7 +357,7 @@
               />
             </div>
             <div
-              class="costura flotar flotar-2 absolute bottom-6 left-0 h-[52%] w-[48%] overflow-hidden rounded-sm shadow-2xl"
+              class="costura animate-flotar-lento absolute bottom-6 left-0 h-[52%] w-[48%] overflow-hidden rounded-sm shadow-2xl"
             >
               <img
                 src="assets/muestras/muestra-vichy.svg"
@@ -332,7 +368,7 @@
               />
             </div>
             <div
-              class="costura flotar flotar-3 absolute right-[10%] bottom-0 h-[34%] w-[36%] overflow-hidden rounded-sm shadow-2xl"
+              class="costura animate-flotar-rapido absolute right-[10%] bottom-0 h-[34%] w-[36%] overflow-hidden rounded-sm shadow-2xl"
             >
               <img
                 src="assets/muestras/muestra-lunares.svg"
@@ -350,11 +386,11 @@
         </div>
 
         <div
-          class="cinta relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
+          class="cinta group relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
           aria-hidden="true"
         >
           <div
-            class="cinta-pista flex w-max items-center gap-6 font-titulo text-2xl font-bold whitespace-nowrap lowercase md:text-3xl"
+            class="cinta-pista relative flex animate-cinta group-hover:[animation-play-state:paused] w-max items-center gap-6 font-titulo text-2xl font-bold whitespace-nowrap lowercase md:text-3xl"
           >
             <span>algodón orgánico</span><span class="cinta-circulo"></span
             ><span>lino lavado</span><span class="cinta-circulo"></span
@@ -382,7 +418,9 @@
             class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
           >
             <div data-aos="fade-up">
-              <p class="etiqueta-seccion">Telas por metros</p>
+              <p class="text-xs tracking-[0.35em] uppercase">
+                Telas por metros
+              </p>
               <h2
                 id="titulo-telas"
                 class="mt-5 max-w-3xl font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
@@ -404,7 +442,7 @@
             >
               <button
                 type="button"
-                class="filtro filtro-activo"
+                class="filtro rounded-full border border-tinta/20 px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:border-terracota hover:text-terracota focus-visible:border-terracota focus-visible:text-terracota aria-pressed:border-tinta aria-pressed:bg-tinta aria-pressed:text-crema dark:border-crema/20 dark:aria-pressed:border-crema dark:aria-pressed:bg-crema dark:aria-pressed:text-tinta"
                 data-filtro="todas"
                 aria-pressed="true"
               >
@@ -412,7 +450,7 @@
               </button>
               <button
                 type="button"
-                class="filtro"
+                class="filtro rounded-full border border-tinta/20 px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:border-terracota hover:text-terracota focus-visible:border-terracota focus-visible:text-terracota aria-pressed:border-tinta aria-pressed:bg-tinta aria-pressed:text-crema dark:border-crema/20 dark:aria-pressed:border-crema dark:aria-pressed:bg-crema dark:aria-pressed:text-tinta"
                 data-filtro="lino"
                 aria-pressed="false"
               >
@@ -420,7 +458,7 @@
               </button>
               <button
                 type="button"
-                class="filtro"
+                class="filtro rounded-full border border-tinta/20 px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:border-terracota hover:text-terracota focus-visible:border-terracota focus-visible:text-terracota aria-pressed:border-tinta aria-pressed:bg-tinta aria-pressed:text-crema dark:border-crema/20 dark:aria-pressed:border-crema dark:aria-pressed:bg-crema dark:aria-pressed:text-tinta"
                 data-filtro="algodon"
                 aria-pressed="false"
               >
@@ -428,7 +466,7 @@
               </button>
               <button
                 type="button"
-                class="filtro"
+                class="filtro rounded-full border border-tinta/20 px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:border-terracota hover:text-terracota focus-visible:border-terracota focus-visible:text-terracota aria-pressed:border-tinta aria-pressed:bg-tinta aria-pressed:text-crema dark:border-crema/20 dark:aria-pressed:border-crema dark:aria-pressed:bg-crema dark:aria-pressed:text-tinta"
                 data-filtro="lana"
                 aria-pressed="false"
               >
@@ -436,7 +474,7 @@
               </button>
               <button
                 type="button"
-                class="filtro"
+                class="filtro rounded-full border border-tinta/20 px-4 py-2 text-xs tracking-[0.15em] uppercase transition-colors duration-300 hover:border-terracota hover:text-terracota focus-visible:border-terracota focus-visible:text-terracota aria-pressed:border-tinta aria-pressed:bg-tinta aria-pressed:text-crema dark:border-crema/20 dark:aria-pressed:border-crema dark:aria-pressed:bg-crema dark:aria-pressed:text-tinta"
                 data-filtro="estampadas"
                 aria-pressed="false"
               >
@@ -459,16 +497,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >18,90 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar lino arena en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -476,7 +522,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 lino arena
               </h3>
@@ -496,16 +542,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >9,50 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar vichy merienda en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -513,7 +567,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 vichy merienda
               </h3>
@@ -533,16 +587,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >12,50 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar lunares verbena en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -550,7 +612,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 lunares verbena
               </h3>
@@ -570,16 +632,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >24,00 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar espiga de la abuela en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -587,7 +657,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 espiga de la abuela
               </h3>
@@ -607,16 +677,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >11,00 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar rayas cantábrico en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -624,7 +702,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 rayas cantábrico
               </h3>
@@ -644,16 +722,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >19,50 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar lino rosa hilo en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -661,7 +747,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 lino rosa hilo
               </h3>
@@ -681,16 +767,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >13,90 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar florecitas del huerto en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -698,7 +792,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 florecitas del huerto
               </h3>
@@ -718,16 +812,24 @@
                   loading="lazy"
                   class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span class="etiqueta-precio absolute bottom-3 left-3"
+                <span
+                  class="etiqueta-precio absolute bottom-3 left-3 group-hover:animate-balancear group-focus-within:animate-balancear"
                   >22,00 € <small>/m</small></span
                 >
                 <button
                   type="button"
-                  class="boton-favorito"
+                  class="boton-favorito group/favorito absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-crema/85 text-tinta transition duration-300 hover:scale-110 hover:bg-crema focus-visible:scale-110 focus-visible:bg-crema aria-pressed:text-terracota"
                   aria-pressed="false"
                   aria-label="Guardar escocés de invierno en favoritos"
                 >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    class="size-[1.15rem] transition-[fill] duration-300 group-aria-pressed/favorito:fill-current group-aria-pressed/favorito:animate-latido-corto"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
@@ -735,7 +837,7 @@
                 </button>
               </div>
               <h3
-                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+                class="mt-4 font-titulo text-xl font-bold lowercase transition-colors group-focus-within:text-terracota md:text-2xl"
               >
                 escocés de invierno
               </h3>
@@ -747,7 +849,11 @@
 
           <p class="mt-12 text-center text-sm text-tinta/65 dark:text-crema/65">
             Cortamos desde 25 cm. Si buscas algo que no ves,
-            <a href="#tienda" class="enlace-subrayado">pregúntanos</a>.
+            <a
+              href="#tienda"
+              class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
+              >pregúntanos</a
+            >.
           </p>
         </div>
       </section>
@@ -760,7 +866,7 @@
         <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-12">
           <div class="lg:col-span-7">
             <div data-aos="fade-up">
-              <p class="etiqueta-seccion">Crea tu kit</p>
+              <p class="text-xs tracking-[0.35em] uppercase">Crea tu kit</p>
               <h2
                 id="titulo-kit"
                 class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
@@ -781,11 +887,19 @@
             <form id="form-kit" class="mt-12 space-y-10" novalidate>
               <!-- Paso 1 -->
               <fieldset data-aos="fade-up">
-                <legend class="paso-kit">
-                  <span>1</span> ¿Qué quieres coser?
+                <legend
+                  class="flex items-center gap-3 font-titulo text-[1.35rem] font-bold"
+                >
+                  <span
+                    class="grid size-8 place-items-center rounded-full border-[1.5px] border-dashed border-current text-sm"
+                    >1</span
+                  >
+                  ¿Qué quieres coser?
                 </legend>
                 <div class="mt-4 flex flex-wrap gap-2">
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -798,7 +912,9 @@
                     />
                     Bolsa tote
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -810,7 +926,9 @@
                     />
                     Delantal
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -822,7 +940,9 @@
                     />
                     Funda de cojín
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -839,9 +959,19 @@
 
               <!-- Paso 2 -->
               <fieldset data-aos="fade-up">
-                <legend class="paso-kit"><span>2</span> Elige la tela</legend>
+                <legend
+                  class="flex items-center gap-3 font-titulo text-[1.35rem] font-bold"
+                >
+                  <span
+                    class="grid size-8 place-items-center rounded-full border-[1.5px] border-dashed border-current text-sm"
+                    >2</span
+                  >
+                  Elige la tela
+                </legend>
                 <div class="mt-4 flex flex-wrap gap-2">
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -853,13 +983,15 @@
                       checked
                     />
                     <img
-                      class="punto-muestra"
+                      class="size-[1.1rem] rounded-full object-none object-[-8px_-8px] ring-1 ring-tinta/25"
                       src="assets/muestras/muestra-lino.svg"
                       alt=""
                     />
                     Lino arena
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -870,13 +1002,15 @@
                       data-muestra="muestra-vichy"
                     />
                     <img
-                      class="punto-muestra"
+                      class="size-[1.1rem] rounded-full object-none object-[-8px_-8px] ring-1 ring-tinta/25"
                       src="assets/muestras/muestra-vichy.svg"
                       alt=""
                     />
                     Vichy merienda
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -887,13 +1021,15 @@
                       data-muestra="muestra-lunares"
                     />
                     <img
-                      class="punto-muestra"
+                      class="size-[1.1rem] rounded-full object-none object-[-8px_-8px] ring-1 ring-tinta/25"
                       src="assets/muestras/muestra-lunares.svg"
                       alt=""
                     />
                     Lunares verbena
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="radio"
@@ -904,7 +1040,7 @@
                       data-muestra="muestra-rayas"
                     />
                     <img
-                      class="punto-muestra"
+                      class="size-[1.1rem] rounded-full object-none object-[-8px_-8px] ring-1 ring-tinta/25"
                       src="assets/muestras/muestra-rayas.svg"
                       alt=""
                     />
@@ -915,11 +1051,19 @@
 
               <!-- Paso 3 -->
               <fieldset data-aos="fade-up">
-                <legend class="paso-kit">
-                  <span>3</span> Añade lo que te falte
+                <legend
+                  class="flex items-center gap-3 font-titulo text-[1.35rem] font-bold"
+                >
+                  <span
+                    class="grid size-8 place-items-center rounded-full border-[1.5px] border-dashed border-current text-sm"
+                    >3</span
+                  >
+                  Añade lo que te falte
                 </legend>
                 <div class="mt-4 flex flex-wrap gap-2">
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="checkbox"
@@ -931,7 +1075,9 @@
                     />
                     Hilo a juego · 2,50 €
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="checkbox"
@@ -942,7 +1088,9 @@
                     />
                     Cremallera · 1,80 €
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="checkbox"
@@ -953,7 +1101,9 @@
                     />
                     Botones de nácar · 4,50 €
                   </label>
-                  <label class="chip">
+                  <label
+                    class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-crema/40 px-4 py-2.5 text-[0.95rem] transition duration-200 hover:-translate-y-0.5 hover:border-crema has-checked:border-crema has-checked:bg-crema has-checked:text-tinta has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo"
+                  >
                     <input
                       class="sr-only"
                       type="checkbox"
@@ -1027,9 +1177,14 @@
                 id="boton-reservar-kit"
                 type="submit"
                 form="form-kit"
-                class="boton boton-primario mt-6 w-full justify-center"
+                class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-7 bg-terracota text-crema hover:bg-tinta hover:shadow-lg focus-visible:bg-tinta dark:hover:bg-rosa-hilo dark:hover:text-tinta dark:focus-visible:bg-rosa-hilo dark:focus-visible:text-tinta mt-6 w-full justify-center"
               >
                 Reservar mi kit
+                <span
+                  class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                  aria-hidden="true"
+                  >→</span
+                >
               </button>
               <p
                 id="kit-mensaje"
@@ -1049,7 +1204,7 @@
         <div class="mx-auto max-w-7xl px-5 md:px-8">
           <div class="grid gap-14 lg:grid-cols-2 lg:gap-20">
             <div class="relative" data-aos="fade-up">
-              <p class="etiqueta-seccion">Talleres</p>
+              <p class="text-xs tracking-[0.35em] uppercase">Talleres</p>
               <h2
                 id="titulo-talleres"
                 class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
@@ -1068,7 +1223,7 @@
 
               <!-- Sello giratorio -->
               <svg
-                class="sello-giratorio mt-10 size-36 text-terracota md:size-44"
+                class="animate-girar mt-10 size-36 text-terracota md:size-44"
                 viewBox="0 0 200 200"
                 aria-hidden="true"
               >
@@ -1110,14 +1265,32 @@
                 Qué traer al taller
               </h3>
               <ul class="mt-4 border-t border-tinta/20 dark:border-crema/20">
-                <li class="fila-servicio">
-                  <span>Tu ropa</span><span>ese vaquero roto</span>
+                <li
+                  class="flex justify-between gap-4 border-b border-tinta/20 py-[1.1rem] font-titulo text-xl font-semibold transition-all duration-300 hover:pl-3 hover:text-terracota dark:border-crema/20"
+                >
+                  <span>Tu ropa</span
+                  ><span
+                    class="font-acento font-normal whitespace-nowrap italic"
+                    >ese vaquero roto</span
+                  >
                 </li>
-                <li class="fila-servicio">
-                  <span>Tus telas</span><span>y tus retales</span>
+                <li
+                  class="flex justify-between gap-4 border-b border-tinta/20 py-[1.1rem] font-titulo text-xl font-semibold transition-all duration-300 hover:pl-3 hover:text-terracota dark:border-crema/20"
+                >
+                  <span>Tus telas</span
+                  ><span
+                    class="font-acento font-normal whitespace-nowrap italic"
+                    >y tus retales</span
+                  >
                 </li>
-                <li class="fila-servicio">
-                  <span>El pack del taller</span><span>desde 12 €</span>
+                <li
+                  class="flex justify-between gap-4 border-b border-tinta/20 py-[1.1rem] font-titulo text-xl font-semibold transition-all duration-300 hover:pl-3 hover:text-terracota dark:border-crema/20"
+                >
+                  <span>El pack del taller</span
+                  ><span
+                    class="font-acento font-normal whitespace-nowrap italic"
+                    >desde 12 €</span
+                  >
                 </li>
               </ul>
               <p class="mt-6 max-w-md text-tinta/70 dark:text-crema/70">
@@ -1136,52 +1309,73 @@
             próximos talleres
           </h3>
           <div class="mt-8 grid gap-5 md:grid-cols-3">
-            <article class="taller" data-aos="fade-up">
-              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
-                Jueves · 18:30
-              </p>
-              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
-                pierde el miedo a la máquina
-              </h4>
-              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
-                Enhebrar, coser recto y rematar. Sales con tu primer neceser.
-              </p>
-              <p class="mt-6 flex items-center justify-between text-sm">
-                <span class="font-semibold">35 €</span
-                ><span class="plazas">Quedan 3 plazas</span>
-              </p>
-            </article>
-            <article class="taller" data-aos="fade-up" data-aos-delay="100">
-              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
-                Sábados · 11:00
-              </p>
-              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
-                sashiko y remiendo visible
-              </h4>
-              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
-                La técnica japonesa para que los rotos se luzcan. Trae tu
-                vaquero.
-              </p>
-              <p class="mt-6 flex items-center justify-between text-sm">
-                <span class="font-semibold">28 €</span
-                ><span class="plazas">Quedan 5 plazas</span>
-              </p>
-            </article>
-            <article class="taller" data-aos="fade-up" data-aos-delay="200">
-              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
-                Último viernes de mes
-              </p>
-              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
-                costura y merienda
-              </h4>
-              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
-                Trae lo que tengas a medias. Ponemos las máquinas y el café.
-              </p>
-              <p class="mt-6 flex items-center justify-between text-sm">
-                <span class="font-semibold">Gratis</span
-                ><span class="plazas plazas-agotadas">Completo</span>
-              </p>
-            </article>
+            <div data-aos="fade-up">
+              <article
+                class="taller relative h-full rounded-xs bg-crema p-7 transition duration-300 hover:-translate-y-1.5 hover:-rotate-[0.6deg] hover:shadow-xl dark:bg-noche"
+              >
+                <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                  Jueves · 18:30
+                </p>
+                <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                  pierde el miedo a la máquina
+                </h4>
+                <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                  Enhebrar, coser recto y rematar. Sales con tu primer neceser.
+                </p>
+                <p class="mt-6 flex items-center justify-between text-sm">
+                  <span class="font-semibold">35 €</span
+                  ><span
+                    class="text-xs tracking-widest text-oliva uppercase dark:text-rosa-hilo"
+                    >Quedan 3 plazas</span
+                  >
+                </p>
+              </article>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <article
+                class="taller relative h-full rounded-xs bg-crema p-7 transition duration-300 hover:-translate-y-1.5 hover:-rotate-[0.6deg] hover:shadow-xl dark:bg-noche"
+              >
+                <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                  Sábados · 11:00
+                </p>
+                <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                  sashiko y remiendo visible
+                </h4>
+                <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                  La técnica japonesa para que los rotos se luzcan. Trae tu
+                  vaquero.
+                </p>
+                <p class="mt-6 flex items-center justify-between text-sm">
+                  <span class="font-semibold">28 €</span
+                  ><span
+                    class="text-xs tracking-widest text-oliva uppercase dark:text-rosa-hilo"
+                    >Quedan 5 plazas</span
+                  >
+                </p>
+              </article>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <article
+                class="taller relative h-full rounded-xs bg-crema p-7 transition duration-300 hover:-translate-y-1.5 hover:-rotate-[0.6deg] hover:shadow-xl dark:bg-noche"
+              >
+                <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                  Último viernes de mes
+                </p>
+                <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                  costura y merienda
+                </h4>
+                <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                  Trae lo que tengas a medias. Ponemos las máquinas y el café.
+                </p>
+                <p class="mt-6 flex items-center justify-between text-sm">
+                  <span class="font-semibold">Gratis</span
+                  ><span
+                    class="text-xs tracking-widest text-oliva uppercase line-through opacity-60 dark:text-rosa-hilo"
+                    >Completo</span
+                  >
+                </p>
+              </article>
+            </div>
           </div>
 
           <!-- Preguntas frecuentes (con acordeón jQuery) -->
@@ -1199,14 +1393,20 @@
               <div>
                 <button
                   type="button"
-                  class="pregunta"
+                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
                   aria-expanded="false"
                   aria-controls="respuesta-1"
                 >
                   ¿Tengo que traer algo al taller?
-                  <span class="icono-mas" aria-hidden="true"></span>
+                  <span
+                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                    aria-hidden="true"
+                  ></span>
                 </button>
-                <div id="respuesta-1" class="respuesta">
+                <div
+                  id="respuesta-1"
+                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+                >
                   <p>
                     Puedes traer tu ropa o tus telas. Si no tienes nada, compra
                     el pack del taller en la tienda y vienes con todo listo.
@@ -1216,14 +1416,20 @@
               <div>
                 <button
                   type="button"
-                  class="pregunta"
+                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
                   aria-expanded="false"
                   aria-controls="respuesta-2"
                 >
                   ¿Qué lleva el pack del taller?
-                  <span class="icono-mas" aria-hidden="true"></span>
+                  <span
+                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                    aria-hidden="true"
+                  ></span>
                 </button>
-                <div id="respuesta-2" class="respuesta">
+                <div
+                  id="respuesta-2"
+                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+                >
                   <p>
                     La tela ya cortada, hilo a juego, agujas y el patrón del
                     proyecto. Cuesta desde 12 € y te lo preparamos al momento.
@@ -1233,14 +1439,20 @@
               <div>
                 <button
                   type="button"
-                  class="pregunta"
+                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
                   aria-expanded="false"
                   aria-controls="respuesta-3"
                 >
                   ¿Necesito máquina para los talleres?
-                  <span class="icono-mas" aria-hidden="true"></span>
+                  <span
+                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                    aria-hidden="true"
+                  ></span>
                 </button>
-                <div id="respuesta-3" class="respuesta">
+                <div
+                  id="respuesta-3"
+                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+                >
                   <p>
                     No, en la trastienda tenemos cuatro máquinas. Solo trae
                     ganas (y el vaquero roto, si vienes a sashiko).
@@ -1250,14 +1462,20 @@
               <div>
                 <button
                   type="button"
-                  class="pregunta"
+                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
                   aria-expanded="false"
                   aria-controls="respuesta-4"
                 >
                   ¿Cómo me apunto?
-                  <span class="icono-mas" aria-hidden="true"></span>
+                  <span
+                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                    aria-hidden="true"
+                  ></span>
                 </button>
-                <div id="respuesta-4" class="respuesta">
+                <div
+                  id="respuesta-4"
+                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+                >
                   <p>
                     En la tienda, llamando al 912 345 678 o escribiendo a
                     hola@entrehilos.es. Las plazas son pocas, así que mejor con
@@ -1269,7 +1487,14 @@
           </div>
         </div>
       </section>
+      <!-- FIN · MICAELA · TALLERES -->
 
+      <!-- ===============================================================
+           INICIO · MICAELA · NOVEDADES Y OFERTAS (slider con Swiper)
+           - Estructura que pide Swiper: .swiper > .swiper-wrapper > .swiper-slide
+           - Flechas propias (#novedades-anterior / #novedades-siguiente)
+             y barra de progreso. Se inicia en js/librerias.js.
+           =============================================================== -->
       <section
         id="novedades"
         class="overflow-hidden bg-tinta py-24 text-crema dark:bg-noche md:py-32"
@@ -1281,7 +1506,9 @@
             data-aos="fade-up"
           >
             <div>
-              <p class="etiqueta-seccion">Novedades y ofertas</p>
+              <p class="text-xs tracking-[0.35em] uppercase">
+                Novedades y ofertas
+              </p>
               <h2
                 id="titulo-novedades"
                 class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
@@ -1297,20 +1524,38 @@
               <button
                 id="novedades-anterior"
                 type="button"
-                class="flecha-slider"
+                class="grid size-13 place-items-center rounded-full border border-crema/35 transition-colors duration-300 hover:border-crema hover:bg-crema hover:text-tinta focus-visible:border-crema focus-visible:bg-crema focus-visible:text-tinta disabled:pointer-events-none disabled:opacity-30"
                 aria-label="Novedad anterior"
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
                   <path d="M15 5l-7 7 7 7" />
                 </svg>
               </button>
               <button
                 id="novedades-siguiente"
                 type="button"
-                class="flecha-slider"
+                class="grid size-13 place-items-center rounded-full border border-crema/35 transition-colors duration-300 hover:border-crema hover:bg-crema hover:text-tinta focus-visible:border-crema focus-visible:bg-crema focus-visible:text-tinta disabled:pointer-events-none disabled:opacity-30"
                 aria-label="Novedad siguiente"
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
                   <path d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -1319,7 +1564,7 @@
 
           <div class="swiper slider-novedades mt-14" data-aos="fade-up">
             <div class="swiper-wrapper">
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-merino.svg"
@@ -1327,9 +1572,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia">Nuevo</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
+                    >Nuevo</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1344,7 +1592,7 @@
                 </div>
               </article>
 
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-retales.svg"
@@ -1352,9 +1600,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia insignia-oferta">−30%</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
+                    >−30%</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1373,7 +1624,7 @@
                 </div>
               </article>
 
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-botones.svg"
@@ -1381,9 +1632,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia">Nuevo</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
+                    >Nuevo</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1398,7 +1652,7 @@
                 </div>
               </article>
 
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-patron.svg"
@@ -1406,9 +1660,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia">Patrón propio</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
+                    >Patrón propio</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1423,7 +1680,7 @@
                 </div>
               </article>
 
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-terciopelo.svg"
@@ -1431,9 +1688,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia insignia-oferta">−15%</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
+                    >−15%</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1450,7 +1710,7 @@
                 </div>
               </article>
 
-              <article class="swiper-slide novedad">
+              <article class="swiper-slide group">
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras/muestra-escoces.svg"
@@ -1458,9 +1718,12 @@
                     width="400"
                     height="500"
                     loading="lazy"
-                    class="aspect-[4/5] w-full object-cover"
+                    class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span class="insignia insignia-oferta">−15%</span>
+                  <span
+                    class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
+                    >−15%</span
+                  >
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1491,7 +1754,7 @@
       >
         <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
           <div data-aos="fade-up">
-            <p class="etiqueta-seccion">La tienda</p>
+            <p class="text-xs tracking-[0.35em] uppercase">La tienda</p>
             <h2
               id="titulo-tienda"
               class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
@@ -1502,7 +1765,11 @@
               >
             </h2>
 
-            <p id="estado-tienda" class="estado-tienda mt-8" role="status">
+            <p
+              id="estado-tienda"
+              class="estado-tienda mt-8 inline-flex items-center gap-2.5 rounded-full border border-tinta/20 px-4 py-2 text-sm dark:border-crema/20"
+              role="status"
+            >
               Consultando horario…
             </p>
 
@@ -1512,7 +1779,12 @@
                 <!-- Dirección -->
                 <li class="flex gap-5">
                   <svg
-                    class="icono-contacto"
+                    class="mt-1 size-[1.35rem] flex-none"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
@@ -1531,7 +1803,12 @@
                 <!-- Horario -->
                 <li class="flex gap-5">
                   <svg
-                    class="icono-contacto"
+                    class="mt-1 size-[1.35rem] flex-none"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
@@ -1548,7 +1825,12 @@
                 <!-- Correo -->
                 <li class="flex gap-5">
                   <svg
-                    class="icono-contacto"
+                    class="mt-1 size-[1.35rem] flex-none"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
@@ -1556,7 +1838,9 @@
                     <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
                   </svg>
                   <p class="text-lg">
-                    <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                    <a
+                      href="mailto:hola@entrehilos.es"
+                      class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
                       >hola@entrehilos.es</a
                     >
                   </p>
@@ -1564,7 +1848,12 @@
                 <!-- Teléfono -->
                 <li class="flex gap-5">
                   <svg
-                    class="icono-contacto"
+                    class="mt-1 size-[1.35rem] flex-none"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
@@ -1573,7 +1862,9 @@
                     />
                   </svg>
                   <p class="text-lg">
-                    <a href="tel:+34912345678" class="enlace-subrayado"
+                    <a
+                      href="tel:+34912345678"
+                      class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
                       >+34 912 345 678</a
                     >
                   </p>
@@ -1600,7 +1891,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -1621,7 +1911,17 @@
                 autocomplete="email"
                 class="min-w-0 flex-1 rounded-full border border-crema/30 bg-transparent px-5 py-3 placeholder:text-crema/50 focus:border-rosa-hilo focus:outline-none"
               />
-              <button type="submit" class="boton boton-claro">Apuntarme</button>
+              <button
+                type="submit"
+                class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-5 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo"
+              >
+                Apuntarme
+                <span
+                  class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                  aria-hidden="true"
+                  >→</span
+                >
+              </button>
             </form>
             <p
               id="mensaje-boletin"
@@ -1646,17 +1946,23 @@
             </h2>
             <ul class="mt-4 space-y-1">
               <li>
-                <a href="https://www.instagram.com/" class="enlace-subrayado"
+                <a
+                  href="https://www.instagram.com/"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
                   >Instagram</a
                 >
               </li>
               <li>
-                <a href="https://www.pinterest.com/" class="enlace-subrayado"
+                <a
+                  href="https://www.pinterest.com/"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
                   >Pinterest</a
                 >
               </li>
               <li>
-                <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                <a
+                  href="mailto:hola@entrehilos.es"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
                   >hola@entrehilos.es</a
                 >
               </li>
@@ -1668,10 +1974,10 @@
       <!-- Logo gigante -->
       <div class="relative mt-20" aria-hidden="true">
         <p
-          class="logo-gigante px-5 font-titulo text-[31vw] leading-[0.8] font-extrabold tracking-tighter lowercase md:px-0 md:text-center md:text-[15.5vw] md:whitespace-nowrap"
+          class="-mb-[0.12em] px-5 font-titulo text-[31vw] leading-[0.8] font-extrabold tracking-tighter lowercase md:px-0 md:text-center md:text-[15.5vw] md:whitespace-nowrap"
         >
           <span class="block md:inline">entre</span> hilos<span
-            class="punto"
+            class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo"
           ></span>
         </p>
         <svg
@@ -1707,7 +2013,7 @@
     <a
       href="#inicio"
       id="volver-arriba"
-      class="volver-arriba grid size-12 place-items-center rounded-full bg-terracota text-crema shadow-lg hover:bg-tinta focus-visible:bg-tinta dark:hover:bg-crema dark:hover:text-tinta"
+      class="pointer-events-none fixed right-5 bottom-5 z-40 grid size-12 translate-y-4 opacity-0 transition duration-300 place-items-center rounded-full bg-terracota text-crema shadow-lg hover:bg-tinta focus-visible:bg-tinta dark:hover:bg-crema dark:hover:text-tinta"
       aria-label="Volver arriba"
     >
       <svg
@@ -1730,7 +2036,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
     <!-- AOS y Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
