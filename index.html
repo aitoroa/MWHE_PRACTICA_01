@@ -39,7 +39,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -374,35 +374,496 @@
                 pack del taller con todo lo que necesitas.
               </p>
             </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-xs tracking-[0.3em] uppercase">
+                Qué traer al taller
+              </h3>
+              <ul class="mt-4 border-t border-tinta/20 dark:border-crema/20">
+                <li class="fila-servicio">
+                  <span>Tu ropa</span><span>ese vaquero roto</span>
+                </li>
+                <li class="fila-servicio">
+                  <span>Tus telas</span><span>y tus retales</span>
+                </li>
+                <li class="fila-servicio">
+                  <span>El pack del taller</span><span>desde 12 €</span>
+                </li>
+              </ul>
+              <p class="mt-6 max-w-md text-tinta/70 dark:text-crema/70">
+                ¿No tienes nada que traer? El pack se compra en la tienda y
+                lleva la tela cortada, hilo a juego, agujas y el patrón del
+                taller.
+              </p>
+            </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-delay="100">
-            <!-- Qué llevar al taller: las tres opciones -->
-            <h3 class="text-xs tracking-[0.3em] uppercase">
-              Qué traer al taller
+          <h3
+            class="mt-24 font-titulo text-3xl font-extrabold lowercase md:text-4xl"
+            data-aos="fade-up"
+          >
+            Próximos talleres
+          </h3>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <article class="taller" data-aos="fade-up">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Jueves · 18:30
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                pierde el miedo a la máquina
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                Enhebrar, coser recto y rematar. Sales con tu primer neceser.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">35 €</span
+                ><span class="plazas">Quedan 3 plazas</span>
+              </p>
+            </article>
+            <article class="taller" data-aos="fade-up" data-aos-delay="100">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Sábados · 11:00
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                sashiko y remiendo visible
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                La técnica japonesa para que los rotos se luzcan. Trae tu
+                vaquero.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">28 €</span
+                ><span class="plazas">Quedan 5 plazas</span>
+              </p>
+            </article>
+            <article class="taller" data-aos="fade-up" data-aos-delay="200">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Último viernes de mes
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                costura y merienda
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                Trae lo que tengas a medias. Ponemos las máquinas y el café.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">Gratis</span
+                ><span class="plazas plazas-agotadas">Completo</span>
+              </p>
+            </article>
+          </div>
+
+          <!-- Preguntas frecuentes (acordeón jQuery) -->
+          <div class="mt-24 grid gap-10 lg:grid-cols-12">
+            <h3
+              class="font-titulo text-3xl font-extrabold lowercase md:text-4xl lg:col-span-4"
+              data-aos="fade-up"
+            >
+              preguntas frecuentes
             </h3>
-            <ul class="mt-4 border-t border-tinta/20 dark:border-crema/20">
-              <li class="fila-servicio">
-                <span>Tu ropa</span><span>ese vaquero roto</span>
-              </li>
-              <li class="fila-servicio">
-                <span>Tus telas</span><span>y tus retales</span>
-              </li>
-              <li class="fila-servicio">
-                <span>El pack del taller</span><span>desde 12 €</span>
-              </li>
-            </ul>
-            <p class="mt-6 max-w-md text-tinta/70 dark:text-crema/70">
-              ¿No tienes nada que traer? El pack se compra en la tienda y lleva
-              la tela cortada, hilo a juego, agujas y el patrón del taller.
-            </p>
+            <div
+              class="divide-y divide-tinta/20 border-y border-tinta/20 dark:divide-crema/20 dark:border-crema/20 lg:col-span-8"
+              data-aos="fade-up"
+            >
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-1"
+                >
+                  ¿Tengo que traer algo al taller?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-1" class="respuesta">
+                  <p>
+                    Puedes traer tu ropa o tus telas. Si no tienes nada, compra
+                    el pack del taller en la tienda y vienes con todo listo.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-2"
+                >
+                  ¿Qué lleva el pack del taller?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-2" class="respuesta">
+                  <p>
+                    La tela ya cortada, hilo a juego, agujas y el patrón del
+                    proyecto. Cuesta desde 12 € y te lo preparamos al momento.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-3"
+                >
+                  ¿Necesito máquina para los talleres?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-3" class="respuesta">
+                  <p>
+                    No, en la trastienda tenemos cuatro máquinas. Solo trae
+                    ganas (y el vaquero roto, si vienes a sashiko).
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-4"
+                >
+                  ¿Cómo me apunto?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-4" class="respuesta">
+                  <p>
+                    En la tienda, llamando al 912 345 678 o escribiendo a
+                    hola@entrehilos.es. Las plazas son pocas, así que mejor con
+                    tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="novedades"></section>
+      <section
+        id="novedades"
+        class="overflow-hidden bg-tinta py-24 text-crema dark:bg-noche md:py-32"
+        aria-labelledby="titulo-novedades"
+      >
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
+            data-aos="fade-up"
+          >
+            <div>
+              <p class="etiqueta-seccion">Novedades y ofertas</p>
+              <h2
+                id="titulo-novedades"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                recién
+                <span
+                  class="font-acento font-normal tracking-normal text-rosa-hilo italic"
+                  >llegado</span
+                >
+              </h2>
+            </div>
+            <div class="flex gap-2">
+              <button
+                id="novedades-anterior"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad anterior"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                id="novedades-siguiente"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad siguiente"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-      <section id="tienda"></section>
+          <div class="swiper slider-novedades mt-14" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-merino.svg"
+                    alt="Ovillos de lana merino rosa"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      lana merino
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Ovillos de 50 g · 12 colores
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">6,90 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-retales.svg"
+                    alt="Cesta de retales de colores"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−30%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      retales al peso
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Todo noviembre · el kilo
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >20,00 €</del
+                    >14,00 €
+                  </p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-botones.svg"
+                    alt="Botones de corozo sobre fondo verde oliva"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      botones de corozo
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Semilla de tagua · la docena
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">7,50 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-patron.svg"
+                    alt="Patrón de papel del delantal Malasaña"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Patrón propio</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      delantal malasaña
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Patrón en papel · tallas XS a XL
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">8,00 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-terciopelo.svg"
+                    alt="Cinta de terciopelo terracota"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      cinta de terciopelo
+                    </h3>
+                    <p class="text-sm text-crema/65">2,5 cm · el metro</p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >3,20 €</del
+                    >2,72 €
+                  </p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-escoces.svg"
+                    alt="Kit de sashiko sobre tela de cuadros"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      kit sashiko
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Aguja, hilo y plantillas
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >18,00 €</del
+                    >15,30 €
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-pagination mt-10"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tienda"
+        class="py-24 dark:bg-tinta md:py-32"
+        aria-labelledby="titulo-tienda"
+      >
+        <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
+          <div data-aos="fade-up">
+            <p class="etiqueta-seccion">La tienda</p>
+            <h2
+              id="titulo-tienda"
+              class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+            >
+              pásate
+              <span class="font-acento font-normal tracking-normal italic"
+                >a vernos</span
+              >
+            </h2>
+
+            <p id="estado-tienda" class="estado-tienda mt-8" role="status">
+              Consultando horario…
+            </p>
+
+            <address class="mt-12 not-italic">
+              <ul class="space-y-9">
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"
+                    />
+                    <circle cx="12" cy="10" r="2.3" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Calle del Pez, 18</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      28004 Madrid · Metro Noviciado (L2)
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Lun–Vie 10:00–14:00 · 17:00–20:30</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      Sáb 10:30–14:30 · Dom cerrado
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
+                    <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                      >hola@entrehilos.es</a
+                    >
+                  </p>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6A2 2 0 0 1 18.4 19.5 15.5 15.5 0 0 1 4.5 5.6a2 2 0 0 1 2.1-2.1Z"
+                    />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="tel:+34912345678" class="enlace-subrayado"
+                      >+34 912 345 678</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div
+            class="mapa min-h-80 overflow-hidden rounded-sm border border-tinta/15 dark:border-crema/15"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <iframe
+              title="Mapa con la ubicación de Entre Hilos en la calle del Pez, Madrid"
+              src="https://maps.google.com/maps?q=Calle%20del%20Pez%2018%2C%2028004%20Madrid&amp;z=16&amp;output=embed"
+              class="block size-full min-h-80"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
@@ -414,6 +875,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="js/secciones.js"></script>
+
+    <script src="js/librerias.js"></script>
   </body>
 </html>
