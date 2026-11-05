@@ -154,3 +154,78 @@ function comprobarHorario() {
 
 comprobarHorario();
 setInterval(comprobarHorario, 60000);
+
+// FORMULARIO RESERVA
+
+const modalReserva = document.querySelector("#modal-reserva");
+const formReserva = document.querySelector("#form-reserva");
+const modalDia = document.querySelector("#modal-dia");
+const modalTaller = document.querySelector("#modal-taller");
+const reservaTaller = document.querySelector("#reserva-taller");
+const reservaMensaje = document.querySelector("#reserva-mensaje");
+const botonesReserva = document.querySelectorAll(".boton-reserva");
+const elementosCerrar = modalReserva.querySelectorAll("[data-cerrar='true']");
+
+let botonPulsado = null;
+
+function abrirModal(boton) {
+  botonPulsado = boton;
+
+  // Forms limpio cada vez que se abre
+  formReserva.reset();
+  formReserva.classList.remove("hidden");
+  reservaMensaje.classList.add("hidden");
+
+  modalDia.textContent = boton.dataset.dia;
+  modalTaller.textContent = boton.dataset.taller;
+  reservaTaller.value = boton.dataset.taller;
+
+  modalReserva.setAttribute("aria-hidden", "false");
+
+  document.documentElement.classList.add("overflow-hidden");
+  document.querySelector("#reserva-nombre").focus();
+}
+
+function cerrarModal() {
+  modalReserva.setAttribute("aria-hidden", "true");
+  document.documentElement.classList.remove("overflow-hidden");
+  if (botonPulsado) {
+    botonPulsado.focus();
+  }
+}
+
+botonesReserva.forEach(function (boton) {
+  boton.addEventListener("click", function () {
+    abrirModal(boton);
+  });
+});
+
+elementosCerrar.forEach(function (elemento) {
+  elemento.addEventListener("click", cerrarModal);
+});
+
+document.addEventListener("keydown", function (evento) {
+  const abierta = modalReserva.getAttribute("aria-hidden") === "false";
+  if (evento.key === "Escape" && abierta) {
+    cerrarModal();
+  }
+});
+
+formReserva.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+
+  const nombre = document.querySelector("#reserva-nombre").value.trim();
+  const correo = document.querySelector("#reserva-correo").value.trim();
+
+  reservaMensaje.textContent =
+    "¡Plaza reservada, " +
+    nombre +
+    "! Te escribiremos a " +
+    correo +
+    " con todos los detalles. ";
+
+  formReserva.classList.add("hidden");
+  reservaMensaje.classList.remove("hidden");
+
+  modalReserva.querySelector("button[data-cerrar]").focus();
+});
