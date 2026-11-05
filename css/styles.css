@@ -166,3 +166,48 @@
     stroke-width: 3;
   }
 }
+
+@layer components {
+  .taller::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1.5px dashed var(--linea);
+    pointer-events: none;
+    transition: border-color 0.35s ease;
+  }
+  .taller:hover::before {
+    border-color: var(--color-terracota);
+  }
+
+  .icono-mas::before,
+  .icono-mas::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 2px;
+    margin-top: -1px;
+    background: currentColor;
+  }
+  .icono-mas::after {
+    transform: rotate(90deg);
+  }
+
+  .estado-tienda::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.4;
+  }
+  .estado-tienda.abierta::before {
+    background: var(--color-oliva);
+    opacity: 1;
+    animation: pulso 1.8s ease-out infinite;
+  }
+  .estado-tienda.cerrada::before {
+    background: var(--color-terracota);
+    opacity: 1;
+  }
+}
