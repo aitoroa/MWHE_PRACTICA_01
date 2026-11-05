@@ -40,8 +40,8 @@ function actualizarKit() {
   kitLista.append(
     crearFila(
       tela.dataset.nombre + " · " + String(metros).replace(".", ",") + " m",
-      precioTela
-    )
+      precioTela,
+    ),
   );
   kitLista.append(crearFila("Patrón " + proyecto.dataset.nombre, precioPatron));
 
@@ -97,63 +97,6 @@ $(function () {
     $pregunta.next(".respuesta").stop(true, true).slideToggle(300);
   });
 });
-
-/* ---------- horario abierto/cerrado ---------- */
-const horario = {
-  0: [],
-  1: [
-    [10, 14],
-    [17, 20.5],
-  ],
-  2: [
-    [10, 14],
-    [17, 20.5],
-  ],
-  3: [
-    [10, 14],
-    [17, 20.5],
-  ],
-  4: [
-    [10, 14],
-    [17, 20.5],
-  ],
-  5: [
-    [10, 14],
-    [17, 20.5],
-  ],
-  6: [[10.5, 14.5]],
-};
-
-function formatearHora(decimal) {
-  const horas = Math.floor(decimal);
-  const minutos = Math.round((decimal - horas) * 60);
-  return horas + ":" + String(minutos).padStart(2, "0");
-}
-
-function comprobarHorario() {
-  const ahora = new Date();
-  const hoy = ahora.getDay();
-  const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
-  const estado = document.querySelector("#estado-tienda");
-
-  const tramoAbierto = horario[hoy].find(function (tramo) {
-    return horaActual >= tramo[0] && horaActual < tramo[1];
-  });
-
-  if (tramoAbierto) {
-    estado.textContent =
-      "Abierto ahora · cerramos a las " + formatearHora(tramoAbierto[1]);
-    estado.classList.add("abierta");
-    estado.classList.remove("cerrada");
-  } else {
-    estado.textContent = "Cerrado ahora · mira el horario abajo";
-    estado.classList.add("cerrada");
-    estado.classList.remove("abierta");
-  }
-}
-
-comprobarHorario();
-setInterval(comprobarHorario, 60000);
 
 // FORMULARIO RESERVA
 

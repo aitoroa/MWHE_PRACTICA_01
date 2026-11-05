@@ -167,24 +167,6 @@
   .icono-mas::after {
     transform: rotate(90deg);
   }
-
-  .estado-tienda::before {
-    content: "";
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 999px;
-    background: currentColor;
-    opacity: 0.4;
-  }
-  .estado-tienda.abierta::before {
-    background: var(--color-oliva);
-    opacity: 1;
-    animation: pulso 1.8s ease-out infinite;
-  }
-  .estado-tienda.cerrada::before {
-    background: var(--color-terracota);
-    opacity: 1;
-  }
 }
 
 @keyframes dibujar-hilo {
@@ -287,15 +269,6 @@
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@keyframes pulso {
-  0% {
-    box-shadow: 0 0 0 0 rgb(119 123 85 / 0.6);
-  }
-  100% {
-    box-shadow: 0 0 0 10px rgb(119 123 85 / 0);
   }
 }
 
