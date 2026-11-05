@@ -211,3 +211,109 @@
     opacity: 1;
   }
 }
+
+@keyframes dibujar-hilo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes desplazar-cinta {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bajar-linea {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes bajar-menu {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes balancear {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: -8deg;
+  }
+  55% {
+    rotate: 5deg;
+  }
+  80% {
+    rotate: -2deg;
+  }
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes saltito {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+    color: var(--color-terracota);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulso {
+  0% {
+    box-shadow: 0 0 0 0 rgb(119 123 85 / 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(119 123 85 / 0);
+  }
+}
