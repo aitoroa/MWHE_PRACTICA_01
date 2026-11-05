@@ -42,50 +42,62 @@
           aria-label="Entre Hilos, volver al inicio"
           >entre hilos<span class="punto" aria-hidden="true"></span
         ></a>
-      </div>
 
-      <nav aria-label="Principal">
-        <ul
-          id="menu"
-          class="menu-desplegable absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
+        <nav aria-label="Principal">
+          <ul
+            id="menu"
+            class="menu-desplegable absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
+          >
+            <li>
+              <a
+                href="#telas"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Telas</a
+              >
+            </li>
+            <li>
+              <a
+                href="#crea-tu-kit"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Crea tu kit</a
+              >
+            </li>
+            <li>
+              <a
+                href="#talleres"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Talleres</a
+              >
+            </li>
+            <li>
+              <a
+                href="#novedades"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Novedades</a
+              >
+            </li>
+            <li>
+              <a
+                href="#tienda"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >La tienda</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          id="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          class="boton-menu grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta lg:hidden"
         >
-          <li>
-            <a
-              href="#telas"
-              class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
-              >Telas</a
-            >
-          </li>
-          <li>
-            <a
-              href="#crea-tu-kit"
-              class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
-              >Crea tu kit</a
-            >
-          </li>
-          <li>
-            <a
-              href="#talleres"
-              class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
-              >Talleres</a
-            >
-          </li>
-          <li>
-            <a
-              href="#novedades"
-              class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
-              >Novedades</a
-            >
-          </li>
-          <li>
-            <a
-              href="#tienda"
-              class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
-              >La tienda</a
-            >
-          </li>
-        </ul>
-      </nav>
+          <span class="hamburguesa" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
+          <span id="texto-boton-menu" class="sr-only">Abrir menú</span>
+        </button>
+      </div>
     </header>
     <main></main>
     <footer></footer>
