@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <!-- Entre Hilos · muestra "lana merino" (exportada de .muestra-merino en css/styles.css) -->
+  <defs>
+    <pattern id="merino" width="14" height="14" patternUnits="userSpaceOnUse">
+      <polygon points="0,0 7,0 0,7" fill="#fff" fill-opacity="0.22"/>
+      <polygon points="14,0 7,0 14,7" fill="#fff" fill-opacity="0.22"/>
+    </pattern>
+    <pattern id="trama" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#000" fill-opacity="0.035"/>
+      <rect width="1" height="3" fill="#fff" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#c98e94"/>
+  <rect width="400" height="500" fill="url(#merino)"/>
+  <rect width="400" height="500" fill="url(#trama)"/>
+</svg>

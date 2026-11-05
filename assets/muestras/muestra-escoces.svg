@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <!-- Entre Hilos · muestra "escocés de invierno" (exportada de .muestra-escoces en css/styles.css) -->
+  <defs>
+    <pattern id="escoces" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="12" height="50" fill="#292521" fill-opacity="0.38"/>
+      <rect x="22" width="2" height="50" fill="#f4ede2" fill-opacity="0.35"/>
+      <rect width="50" height="12" fill="#292521" fill-opacity="0.38"/>
+      <rect y="22" width="50" height="2" fill="#f4ede2" fill-opacity="0.35"/>
+    </pattern>
+    <pattern id="trama" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#000" fill-opacity="0.035"/>
+      <rect width="1" height="3" fill="#fff" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#9f4b33"/>
+  <rect width="400" height="500" fill="url(#escoces)"/>
+  <rect width="400" height="500" fill="url(#trama)"/>
+</svg>
