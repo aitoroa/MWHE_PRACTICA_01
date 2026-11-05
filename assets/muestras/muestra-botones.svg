@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <!-- Entre Hilos · muestra "botones de corozo" (exportada de .muestra-botones en css/styles.css) -->
+  <defs>
+    <pattern id="botones" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="16.25" fill="none" stroke="#292521" stroke-opacity="0.25" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="15" fill="#f4ede2"/>
+      <circle cx="30" cy="30" r="2" fill="#292521" fill-opacity="0.55"/>
+    </pattern>
+    <pattern id="trama" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#000" fill-opacity="0.035"/>
+      <rect width="1" height="3" fill="#fff" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#777b55"/>
+  <rect width="400" height="500" fill="url(#botones)"/>
+  <rect width="400" height="500" fill="url(#trama)"/>
+</svg>

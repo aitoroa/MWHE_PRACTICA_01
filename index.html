@@ -57,6 +57,776 @@
       }
     </style>
   </head>
+  <body
+    class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
+  >
+    <a href="#contenido" class="saltar-contenido">Saltar al contenido</a>
+    <header
+      id="cabecera"
+      class="cabecera cabecera-oculta fixed inset-x-0 top-0 z-50"
+    >
+      <div class="mx-auto flex max-w-7xl items-center gap-3 px-5 py-4 md:px-8">
+        <a
+          href="#portada"
+          class="logo mr-auto font-titulo text-2xl leading-none font-extrabold tracking-tight lowercase md:text-3xl"
+          aria-label="Entre Hilos, volver al inicio"
+          >entre hilos<span class="punto" aria-hidden="true"></span
+        ></a>
+
+        <nav aria-label="Principal">
+          <ul
+            id="menu"
+            class="menu-desplegable absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
+          >
+            <li>
+              <a
+                href="#telas"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Telas</a
+              >
+            </li>
+            <li>
+              <a
+                href="#crea-tu-kit"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Crea tu kit</a
+              >
+            </li>
+            <li>
+              <a
+                href="#talleres"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Talleres</a
+              >
+            </li>
+            <li>
+              <a
+                href="#novedades"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Novedades</a
+              >
+            </li>
+            <li>
+              <a
+                href="#tienda"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >La tienda</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          id="boton-tema"
+          type="button"
+          aria-pressed="false"
+          aria-label="Activar modo oscuro"
+          class="boton-icono grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25 lg:ml-4"
+        >
+          <svg
+            class="size-5 transition-transform duration-500 dark:rotate-180"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+            <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" />
+          </svg>
+        </button>
+        <button
+          id="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          class="boton-menu grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta lg:hidden"
+        >
+          <span class="hamburguesa" aria-hidden="true"
+            ><span></span><span></span><span></span
+          ></span>
+          <span id="texto-boton-menu" class="sr-only">Abrir menú</span>
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <section
+        id="inicio"
+        class="relative h-svh overflow-hidden bg-tinta text-crema dark:bg-noche"
+        aria-label="Vídeo de presentación"
+      >
+        <video
+          class="absolute inset-0 size-full object-cover"
+          src="assets/video-portada.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        ></video>
+        <div
+          class="absolute inset-0 z-10 grid place-items-center px-5 opacity-60"
+        >
+          <p
+            class="font-titulo text-[clamp(3.5rem,14vw,10rem)] leading-none font-extrabold tracking-tight text-tinta lowercase"
+            data-aos="fade-up"
+          >
+            entre hilos<span class="punto" aria-hidden="true"></span>
+          </p>
+        </div>
+        <svg
+          class="hilo-video pointer-events-none absolute inset-x-0 top-1/2 z-0 w-full -translate-y-1/2"
+          viewBox="0 0 1200 200"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            class="hilo-trazo"
+            pathLength="1"
+            d="M-20 130 C 120 30, 220 170, 360 100 S 560 20, 660 110 S 860 180, 960 90 S 1130 50, 1220 120"
+          />
+        </svg>
+
+        <div
+          class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-tinta/70 to-transparent"
+          aria-hidden="true"
+        ></div>
+
+        <a
+          href="#portada"
+          class="indicador-bajar absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-xs tracking-[0.35em] uppercase transition hover:text-rosa-hilo focus-visible:text-rosa-hilo"
+        >
+          Descubre
+          <span class="linea-bajar" aria-hidden="true"></span>
+        </a>
+      </section>
+      <section
+        id="portada"
+        class="relative -scroll-mt-20 overflow-hidden pt-28 md:pt-36"
+        aria-labelledby="titulo-portada"
+      >
+        <svg
+          class="hilo-portada pointer-events-none absolute inset-x-0 top-40 z-0 w-full md:top-56"
+          viewBox="0 0 1200 300"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            class="hilo-trazo"
+            pathLength="1"
+            d="M-20 210 C 120 120, 200 60, 300 150 S 430 280, 520 170 S 640 20, 700 120 S 760 260, 880 200 S 1050 40, 1220 120"
+          />
+        </svg>
+
+        <div
+          class="relative z-10 mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-12 lg:items-end"
+        >
+          <div class="lg:col-span-7">
+            <p class="etiqueta-seccion" data-aos="fade-up">
+              Mercería y telas · Malasaña, Madrid
+            </p>
+            <h1
+              id="titulo-portada"
+              class="mt-6 font-titulo text-[clamp(3.4rem,13vw,9rem)] leading-[0.88] font-extrabold tracking-tighter lowercase"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              todo empieza
+              <span
+                class="font-acento font-normal tracking-normal text-terracota italic"
+                >por un</span
+              >
+              hilo<span class="punto punto-latido" aria-hidden="true"></span>
+            </h1>
+            <p
+              class="mt-8 max-w-md text-lg leading-relaxed text-tinta/80 dark:text-crema/80"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Telas por metros, mercería de la de siempre y kits para que te lo
+              cosas tú. Un rincón del barrio para quienes hacen las cosas con
+              las manos.
+            </p>
+            <div
+              class="mt-10 flex flex-wrap gap-3"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <a href="#telas" class="boton boton-primario">Ver telas</a>
+              <a href="#crea-tu-kit" class="boton boton-secundario"
+                >Crea tu kit</a
+              >
+            </div>
+          </div>
+          <div
+            class="collage relative h-[380px] sm:h-[460px] lg:col-span-5 lg:h-[560px]"
+            aria-hidden="true"
+          >
+            <div
+              class="costura flotar absolute top-0 right-0 h-[72%] w-[62%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-lino.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <div
+              class="costura flotar flotar-2 absolute bottom-6 left-0 h-[52%] w-[48%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-vichy.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <div
+              class="costura flotar flotar-3 absolute right-[10%] bottom-0 h-[34%] w-[36%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-lunares.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <span
+              class="etiqueta-precio absolute top-[58%] right-[40%] z-10 -rotate-6 whitespace-nowrap"
+              >lino lavado · 18,90 €/m</span
+            >
+          </div>
+        </div>
+        <div
+          class="cinta relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
+          aria-hidden="true"
+        >
+          <div
+            class="cinta-pista flex w-max items-center gap-6 font-titulo text-2xl font-bold whitespace-nowrap lowercase md:text-3xl"
+          >
+            <span>algodón orgánico</span><span class="cinta-circulo"></span
+            ><span>lino lavado</span><span class="cinta-circulo"></span
+            ><span>lana merino</span><span class="cinta-circulo"></span
+            ><span>botones de nácar</span><span class="cinta-circulo"></span
+            ><span>cremalleras</span><span class="cinta-circulo"></span
+            ><span>patrones</span><span class="cinta-circulo"></span
+            ><span>talleres</span><span class="cinta-circulo"></span
+            ><span>segunda vida</span><span class="cinta-circulo"></span>
+            <span>algodón orgánico</span><span class="cinta-circulo"></span
+            ><span>lino lavado</span><span class="cinta-circulo"></span
+            ><span>lana merino</span><span class="cinta-circulo"></span
+            ><span>botones de nácar</span><span class="cinta-circulo"></span
+            ><span>cremalleras</span><span class="cinta-circulo"></span
+            ><span>patrones</span><span class="cinta-circulo"></span
+            ><span>talleres</span><span class="cinta-circulo"></span
+            ><span>segunda vida</span><span class="cinta-circulo"></span>
+          </div>
+        </div>
+      </section>
+      <section id="telas" class="py-24 md:py-32" aria-labelledby="titulo-telas">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+          >
+            <div data-aos="fade-up">
+              <p class="etiqueta-seccion">Telas por metros</p>
+              <h2
+                id="titulo-telas"
+                class="mt-5 max-w-3xl font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                telas que
+                <span class="font-acento font-normal tracking-normal italic"
+                  >dan ganas</span
+                >
+                de coser
+              </h2>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filtrar telas"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <button
+                type="button"
+                class="filtro filtro-activo"
+                data-filtro="todas"
+                aria-pressed="true"
+              >
+                Todas
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="lino"
+                aria-pressed="false"
+              >
+                Lino
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="algodon"
+                aria-pressed="false"
+              >
+                Algodón
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="lana"
+                aria-pressed="false"
+              >
+                Lana
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="estampadas"
+                aria-pressed="false"
+              >
+                Estampadas
+              </button>
+            </div>
+          </div>
+          <div
+            class="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4"
+          >
+            <!-- Tela 1 -->
+            <article class="tela group" data-categoria="lino">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lino.svg"
+                  alt="Muestra de lino lavado color arena"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >18,90 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lino arena en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lino arena
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                100% lino lavado · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 2 -->
+            <article class="tela group" data-categoria="algodon">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-vichy.svg"
+                  alt="Muestra de algodón de cuadros vichy terracota"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >9,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar vichy merienda en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                vichy merienda
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Algodón 100% · 150 cm
+              </p>
+            </article>
+
+            <!-- Tela 3 -->
+            <article class="tela group" data-categoria="estampadas">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lunares.svg"
+                  alt="Muestra de viscosa negra con lunares rosas"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >12,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lunares verbena en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lunares verbena
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Viscosa estampada · 145 cm
+              </p>
+            </article>
+
+            <!-- Tela 4 -->
+            <article class="tela group" data-categoria="lana">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-espiga.svg"
+                  alt="Muestra de paño de lana en espiga verde oliva"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >24,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar espiga de la abuela en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                espiga de la abuela
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Paño de lana · 150 cm
+              </p>
+            </article>
+
+            <!-- Tela 5 -->
+            <article class="tela group" data-categoria="algodon">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-rayas.svg"
+                  alt="Muestra de algodón de rayas verde oliva y crema"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >11,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar rayas cantábrico en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                rayas cantábrico
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Lona de algodón · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 6 -->
+            <article class="tela group" data-categoria="lino">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lino-rosa.svg"
+                  alt="Muestra de lino rosa empolvado"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >19,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lino rosa hilo en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lino rosa hilo
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                100% lino lavado · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 7 -->
+            <article class="tela group" data-categoria="estampadas">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-flores.svg"
+                  alt="Muestra de popelín con florecitas"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >13,90 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar florecitas del huerto en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                florecitas del huerto
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Popelín estampado · 145 cm
+              </p>
+            </article>
+
+            <!-- Tela 8 -->
+            <article class="tela group" data-categoria="lana">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-escoces.svg"
+                  alt="Muestra de lana de cuadros escoceses terracota"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >22,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar escocés de invierno en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                escocés de invierno
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Lana y mezcla · 150 cm
+              </p>
+            </article>
+          </div>
+
+          <p class="mt-12 text-center text-sm text-tinta/65 dark:text-crema/65">
+            Cortamos desde 25 cm. Si buscas algo que no ves,
+            <a href="#tienda" class="enlace-subrayado">pregúntanos</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="lg:col-span-2">
+            <h2 class="font-titulo text-3xl font-extrabold lowercase">
+              las novedades, primero a ti
+            </h2>
+            <form id="form-boletin" class="mt-6 flex max-w-md gap-2">
+              <label for="email-boletin" class="sr-only"
+                >Tu correo electrónico</label
+              >
+              <input
+                id="email-boletin"
+                type="email"
+                name="email"
+                required
+                placeholder="tu@correo.com"
+                autocomplete="email"
+                class="min-w-0 flex-1 rounded-full border border-crema/30 bg-transparent px-5 py-3 placeholder:text-crema/50 focus:border-rosa-hilo focus:outline-none"
+              />
+              <button type="submit" class="boton boton-claro">Apuntarme</button>
+            </form>
+            <p
+              id="mensaje-boletin"
+              class="mt-3 hidden text-sm text-rosa-hilo"
+              role="status"
+            ></p>
+          </div>
+
+          <div>
+            <h2 class="text-xs tracking-[0.25em] uppercase opacity-70">
+              Visítanos
+            </h2>
+            <p class="mt-4">
+              Calle del Pez, 18<br />28004 Madrid<br />L–V 10–14 · 17–20:30<br />S
+              10:30–14:30
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-xs tracking-[0.25em] uppercase opacity-70">
+              Síguenos
+            </h2>
+            <ul class="mt-4 space-y-1">
+              <li>
+                <a href="https://www.instagram.com/" class="enlace-subrayado"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="https://www.pinterest.com/" class="enlace-subrayado"
+                  >Pinterest</a
+                >
+              </li>
+              <li>
+                <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                  >hola@entrehilos.es</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mt-20" aria-hidden="true">
+        <p
+          class="logo-gigante px-5 font-titulo text-[31vw] leading-[0.8] font-extrabold tracking-tighter lowercase md:px-0 md:text-center md:text-[15.5vw] md:whitespace-nowrap"
+        >
+          <span class="block md:inline">entre</span> hilos<span
+            class="punto"
+          ></span>
+        </p>
+        <svg
+          class="hilo-footer pointer-events-none absolute inset-x-0 top-1/4 w-full"
+          viewBox="0 0 1200 200"
+          fill="none"
+        >
+          <path
+            class="hilo-trazo"
+            pathLength="1"
+            d="M-20 120 C 100 40, 160 180, 300 110 S 520 30, 640 120 S 860 190, 960 90 S 1120 60, 1220 130"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="relative z-10 border-t border-crema/15 bg-tinta dark:bg-noche"
+      >
+        <div
+          class="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-crema/60 md:flex-row md:justify-between md:px-8"
+        >
+          <p>
+            © <span id="anio">2026</span> Entre Hilos · Mercería y telas en
+            Malasaña
+          </p>
+          <p>
+            Práctica MWHE · Aitor Ochoa Arrastio y Micaela Noriega Meriño · G41
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#inicio"
+      id="volver-arriba"
+      class="volver-arriba grid size-12 place-items-center rounded-full bg-terracota text-crema shadow-lg hover:bg-tinta focus-visible:bg-tinta dark:hover:bg-crema dark:hover:text-tinta"
+      aria-label="Volver arriba"
+    >
+      <svg
+        class="size-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </a>
   <body>
     <header></header>
     <main>
@@ -875,6 +1645,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="js/interfaz.js"></script>
     <script src="js/secciones.js"></script>
 
     <script src="js/librerias.js"></script>
