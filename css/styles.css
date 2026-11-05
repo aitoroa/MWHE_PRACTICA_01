@@ -225,6 +225,15 @@
   }
 }
 /* keyframe */
+@keyframes latido {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
 
 @keyframes saltito {
   0% {
@@ -236,6 +245,14 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes pulso {
+  0% {
+    box-shadow: 0 0 0 0 rgb(119 123 85 / 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(119 123 85 / 0);
   }
 }
 

@@ -39,7 +39,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -753,7 +753,117 @@
         </div>
       </section>
 
-      <section id="tienda"></section>
+      <section
+        id="tienda"
+        class="py-24 dark:bg-tinta md:py-32"
+        aria-labelledby="titulo-tienda"
+      >
+        <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
+          <div data-aos="fade-up">
+            <p class="etiqueta-seccion">La tienda</p>
+            <h2
+              id="titulo-tienda"
+              class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+            >
+              pásate
+              <span class="font-acento font-normal tracking-normal italic"
+                >a vernos</span
+              >
+            </h2>
+
+            <p id="estado-tienda" class="estado-tienda mt-8" role="status">
+              Consultando horario…
+            </p>
+
+            <address class="mt-12 not-italic">
+              <ul class="space-y-9">
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"
+                    />
+                    <circle cx="12" cy="10" r="2.3" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Calle del Pez, 18</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      28004 Madrid · Metro Noviciado (L2)
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Lun–Vie 10:00–14:00 · 17:00–20:30</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      Sáb 10:30–14:30 · Dom cerrado
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
+                    <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                      >hola@entrehilos.es</a
+                    >
+                  </p>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6A2 2 0 0 1 18.4 19.5 15.5 15.5 0 0 1 4.5 5.6a2 2 0 0 1 2.1-2.1Z"
+                    />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="tel:+34912345678" class="enlace-subrayado"
+                      >+34 912 345 678</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div
+            class="mapa min-h-80 overflow-hidden rounded-sm border border-tinta/15 dark:border-crema/15"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <iframe
+              title="Mapa con la ubicación de Entre Hilos en la calle del Pez, Madrid"
+              src="https://maps.google.com/maps?q=Calle%20del%20Pez%2018%2C%2028004%20Madrid&amp;z=16&amp;output=embed"
+              class="block size-full min-h-80"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
@@ -765,6 +875,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="js/secciones.js"></script>
+
+    <script src="js/librerias.js"></script>
   </body>
 </html>
