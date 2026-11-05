@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ENTRE HILOS · Mercería y telas en Malasaña</title>
+    <title>Entre Hilos · Mercería y telas en Malasaña</title>
     <meta
       name="description"
       content="Entre Hilos: telas por metros, mercería, kits de costura y talleres en el barrio de Malasaña, Madrid."
     />
+
     <link
       rel="icon"
       type="image/png"
@@ -23,7 +24,6 @@
     />
     <link rel="manifest" href="favicon/manifest.json" />
 
-    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,12 +39,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
     />
+
     <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- Tailwind desde el CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style type="text/tailwindcss">
-      /* Modo oscuro con la clase .dark en <html> (la pone js/interfaz.js) */
       @custom-variant dark (&:where(.dark, .dark *));
 
       @theme static {
@@ -55,7 +55,7 @@
         --color-tinta: #292521;
         --color-rosa-hilo: #c98e94;
 
-        /* Auxiliares (derivados de la paleta, para superficies y modo oscuro) */
+        /* Auxiliares (para modo oscuro) */
         --color-lino: #e9dfcf;
         --color-noche: #1c1916;
         --color-oliva-oscuro: #4e5137;
@@ -66,12 +66,21 @@
         --font-acento: "Instrument Serif", Georgia, serif;
       }
     </style>
+
+    <script>
+      try {
+        if (localStorage.getItem("tema") === "oscuro") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (error) {}
+    </script>
   </head>
 
   <body
     class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
   >
     <a href="#contenido" class="saltar-contenido">Saltar al contenido</a>
+
     <header
       id="cabecera"
       class="cabecera cabecera-oculta fixed inset-x-0 top-0 z-50"
@@ -126,6 +135,7 @@
             </li>
           </ul>
         </nav>
+
         <button
           id="boton-tema"
           type="button"
@@ -149,6 +159,7 @@
             <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" />
           </svg>
         </button>
+
         <button
           id="boton-menu"
           type="button"
@@ -163,6 +174,7 @@
         </button>
       </div>
     </header>
+
     <main id="contenido">
       <section
         id="inicio"
@@ -178,6 +190,7 @@
           playsinline
           aria-hidden="true"
         ></video>
+
         <div
           class="absolute inset-0 z-10 grid place-items-center px-5 opacity-60"
         >
@@ -188,6 +201,7 @@
             entre hilos<span class="punto" aria-hidden="true"></span>
           </p>
         </div>
+
         <svg
           class="hilo-video pointer-events-none absolute inset-x-0 top-1/2 z-0 w-full -translate-y-1/2"
           viewBox="0 0 1200 200"
@@ -214,6 +228,7 @@
           <span class="linea-bajar" aria-hidden="true"></span>
         </a>
       </section>
+
       <section
         id="portada"
         class="relative -scroll-mt-20 overflow-hidden pt-28 md:pt-36"
@@ -272,6 +287,7 @@
               >
             </div>
           </div>
+
           <div
             class="collage relative h-[380px] sm:h-[460px] lg:col-span-5 lg:h-[560px]"
             aria-hidden="true"
@@ -315,6 +331,7 @@
             >
           </div>
         </div>
+
         <div
           class="cinta relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
           aria-hidden="true"
@@ -341,6 +358,7 @@
           </div>
         </div>
       </section>
+
       <section id="telas" class="py-24 md:py-32" aria-labelledby="titulo-telas">
         <div class="mx-auto max-w-7xl px-5 md:px-8">
           <div
@@ -409,6 +427,7 @@
               </button>
             </div>
           </div>
+
           <div
             class="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4"
           >
@@ -743,6 +762,7 @@
             </div>
 
             <form id="form-kit" class="mt-12 space-y-10" novalidate>
+              <!-- Paso 1 -->
               <fieldset data-aos="fade-up">
                 <legend class="paso-kit">
                   <span>1</span> ¿Qué quieres coser?
@@ -800,6 +820,7 @@
                 </div>
               </fieldset>
 
+              <!-- Paso 2 -->
               <fieldset data-aos="fade-up">
                 <legend class="paso-kit"><span>2</span> Elige la tela</legend>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -875,6 +896,7 @@
                 </div>
               </fieldset>
 
+              <!-- Paso 3 -->
               <fieldset data-aos="fade-up">
                 <legend class="paso-kit">
                   <span>3</span> Añade lo que te falte
@@ -930,6 +952,7 @@
             </form>
           </div>
 
+          <!-- Tarjeta resumen del kit -->
           <aside
             class="lg:col-span-5"
             aria-labelledby="titulo-tu-kit"
@@ -1025,6 +1048,44 @@
                 transformar. Trae tu ropa o tus telas, o llévate de la tienda el
                 pack del taller con todo lo que necesitas.
               </p>
+
+              <!-- Sello giratorio -->
+              <svg
+                class="sello-giratorio mt-10 size-36 text-terracota md:size-44"
+                viewBox="0 0 200 200"
+                aria-hidden="true"
+              >
+                <defs>
+                  <path
+                    id="circulo-sello"
+                    d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"
+                  />
+                </defs>
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="94"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-dasharray="6 6"
+                />
+
+                <text fill="currentColor" font-size="17">
+                  <textPath
+                    href="#circulo-sello"
+                    textLength="452"
+                    lengthAdjust="spacing"
+                  >
+                    hecho a mano
+                    <tspan font-size="26">●</tspan>
+                    zurcido con cariño
+                    <tspan font-size="26">●</tspan>
+                    &#160;
+                  </textPath>
+                </text>
+                <circle cx="100" cy="100" r="9" fill="#c98e94" />
+              </svg>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100">
@@ -1050,11 +1111,12 @@
             </div>
           </div>
 
+          <!-- Talleres -->
           <h3
             class="mt-24 font-titulo text-3xl font-extrabold lowercase md:text-4xl"
             data-aos="fade-up"
           >
-            Próximos talleres
+            próximos talleres
           </h3>
           <div class="mt-8 grid gap-5 md:grid-cols-3">
             <article class="taller" data-aos="fade-up">
@@ -1105,7 +1167,7 @@
             </article>
           </div>
 
-          <!-- Preguntas frecuentes (acordeón jQuery) -->
+          <!-- Preguntas frecuentes (con acordeón jQuery) -->
           <div class="mt-24 grid gap-10 lg:grid-cols-12">
             <h3
               class="font-titulo text-3xl font-extrabold lowercase md:text-4xl lg:col-span-4"
@@ -1427,8 +1489,10 @@
               Consultando horario…
             </p>
 
+            <!-- Datos de la tienda -->
             <address class="mt-12 not-italic">
               <ul class="space-y-9">
+                <!-- Dirección -->
                 <li class="flex gap-5">
                   <svg
                     class="icono-contacto"
@@ -1447,7 +1511,7 @@
                     </p>
                   </div>
                 </li>
-
+                <!-- Horario -->
                 <li class="flex gap-5">
                   <svg
                     class="icono-contacto"
@@ -1464,7 +1528,7 @@
                     </p>
                   </div>
                 </li>
-
+                <!-- Correo -->
                 <li class="flex gap-5">
                   <svg
                     class="icono-contacto"
@@ -1480,7 +1544,7 @@
                     >
                   </p>
                 </li>
-
+                <!-- Teléfono -->
                 <li class="flex gap-5">
                   <svg
                     class="icono-contacto"
@@ -1501,6 +1565,7 @@
             </address>
           </div>
 
+          <!-- Mapa Google Maps -->
           <div
             class="mapa min-h-80 overflow-hidden rounded-sm border border-tinta/15 dark:border-crema/15"
             data-aos="fade-up"
@@ -1518,6 +1583,7 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -1582,6 +1648,7 @@
         </div>
       </div>
 
+      <!-- Logo gigante -->
       <div class="relative mt-20" aria-hidden="true">
         <p
           class="logo-gigante px-5 font-titulo text-[31vw] leading-[0.8] font-extrabold tracking-tighter lowercase md:px-0 md:text-center md:text-[15.5vw] md:whitespace-nowrap"
@@ -1619,6 +1686,7 @@
         </div>
       </div>
     </footer>
+
     <a
       href="#inicio"
       id="volver-arriba"
@@ -1639,13 +1707,18 @@
       </svg>
     </a>
 
-    <!-- JavaScript -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <!-- AOS y Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/interfaz.js"></script>
     <script src="js/secciones.js"></script>
     <script src="js/librerias.js"></script>
