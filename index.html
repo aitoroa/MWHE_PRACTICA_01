@@ -55,10 +55,11 @@
         --color-tinta: #292521;
         --color-rosa-hilo: #c98e94;
 
-        /* Auxiliares (para el modo oscuro) */
+        /* Auxiliares (derivados de la paleta principal) */
         --color-lino: #e9dfcf;
         --color-noche: #1c1916;
         --color-oliva-oscuro: #4e5137;
+        --color-amarillo-hilo: #ebcf85;
 
         /* Tipografías */
         --font-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
@@ -77,6 +78,9 @@
         --animate-latido-corto: latido 0.5s ease;
         --animate-girar: girar 22s linear infinite;
         --animate-saltito: saltito 0.45s ease;
+        --animate-ondear: ondear-hilo 12s linear infinite;
+        --animate-ondear-lento: ondear-hilo 18s linear infinite reverse;
+        --animate-ondear-rapido: ondear-hilo 9s linear infinite;
       }
     </style>
 
@@ -239,6 +243,27 @@
           fill="none"
           aria-hidden="true"
         >
+          <g class="animate-ondear">
+            <path
+              class="hilo-trazo stroke-terracota [animation-delay:1.1s]"
+              pathLength="1"
+              d="M-20 95 q 100 -90 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
+            />
+          </g>
+          <g class="animate-ondear-lento">
+            <path
+              class="hilo-trazo stroke-oliva [animation-delay:1.4s]"
+              pathLength="1"
+              d="M-120 115 q 100 70 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
+            />
+          </g>
+          <g class="animate-ondear-rapido">
+            <path
+              class="hilo-trazo stroke-amarillo-hilo [animation-delay:1.7s]"
+              pathLength="1"
+              d="M-60 100 q 100 -140 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
+            />
+          </g>
           <path
             class="hilo-trazo"
             pathLength="1"
