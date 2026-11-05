@@ -1,0 +1,271 @@
+@layer components {
+  /* ---------- CREA TU KIT ---------- */
+  .paso-kit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-titulo);
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+  .paso-kit span {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px dashed currentColor;
+    border-radius: 999px;
+    font-size: 0.9rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid rgb(244 237 226 / 0.4);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.25s ease, color 0.25s ease,
+      border-color 0.25s ease, transform 0.25s ease;
+  }
+  .chip:hover {
+    border-color: var(--color-crema);
+    transform: translateY(-2px);
+  }
+
+  .chip:has(input:checked) {
+    background: var(--color-crema);
+    border-color: var(--color-crema);
+    color: var(--color-tinta);
+  }
+
+  .chip:has(input:focus-visible) {
+    outline: 2px solid var(--color-rosa-hilo);
+    outline-offset: 3px;
+  }
+
+  .punto-muestra {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgb(41 37 33 / 0.25);
+    object-fit: none;
+    object-position: -8px -8px;
+  }
+
+  .total-actualizado {
+    animation: saltito 0.45s ease;
+  }
+
+  /* ---------- TALLERES ---------- */
+  .sello-giratorio {
+    animation: girar 22s linear infinite;
+  }
+
+  .fila-servicio {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--linea);
+    font-family: var(--font-titulo);
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: padding 0.3s ease, color 0.3s ease;
+  }
+  .fila-servicio span:last-child {
+    font-family: var(--font-acento);
+    font-style: italic;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .fila-servicio:hover {
+    padding-left: 0.75rem;
+    color: var(--color-terracota);
+  }
+
+  .taller {
+    position: relative;
+    padding: 1.75rem;
+    background: var(--superficie);
+    border-radius: 2px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .taller::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1.5px dashed var(--linea);
+    pointer-events: none;
+    transition: border-color 0.35s ease;
+  }
+  .taller:hover {
+    transform: translateY(-6px) rotate(-0.6deg);
+    box-shadow: 0 24px 40px -24px var(--sombra);
+  }
+  .taller:hover::before {
+    border-color: var(--color-terracota);
+  }
+  .plazas {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-oliva);
+  }
+  .dark .plazas {
+    color: var(--color-rosa-hilo);
+  }
+  .plazas-agotadas {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  /* ---------- NOVEDADES ---------- */
+  .flecha-slider {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border: 1px solid rgb(244 237 226 / 0.35);
+    border-radius: 999px;
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .flecha-slider svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .flecha-slider:hover,
+  .flecha-slider:focus-visible {
+    background: var(--color-crema);
+    border-color: var(--color-crema);
+    color: var(--color-tinta);
+  }
+  .flecha-slider:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .novedad img {
+    transition: transform 0.7s ease;
+  }
+  .novedad:hover img {
+    transform: scale(1.04);
+  }
+
+  .insignia {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: var(--color-crema);
+    color: var(--color-tinta);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .insignia-oferta {
+    background: var(--color-terracota);
+    color: var(--color-crema);
+    font-family: var(--font-titulo);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    animation: latido 2.4s ease-in-out infinite;
+  }
+
+  /* ---------- LA TIENDA ---------- */
+  .estado-tienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+  .estado-tienda::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.4;
+  }
+  .estado-tienda.abierta::before {
+    background: var(--color-oliva);
+    opacity: 1;
+    animation: pulso 1.8s ease-out infinite;
+  }
+  .estado-tienda.cerrada::before {
+    background: var(--color-terracota);
+    opacity: 1;
+  }
+
+  .icono-contacto {
+    flex: none;
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-top: 0.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+/* keyframe */
+
+@keyframes saltito {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+    color: var(--color-terracota);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slider-novedades {
+  overflow: visible;
+}
+.slider-novedades .swiper-slide {
+  height: auto;
+}
+.slider-novedades .swiper-pagination.swiper-pagination-progressbar {
+  position: relative;
+  top: auto;
+  height: 2px;
+  background: rgb(244 237 226 / 0.2);
+}
+.slider-novedades
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  background: var(--color-rosa-hilo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
