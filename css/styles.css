@@ -32,3 +32,137 @@
     outline-offset: 3px;
   }
 }
+
+@layer components {
+  .cabecera::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: color-mix(in srgb, var(--superficie) 88%, transparent);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .cabecera-con-fondo {
+    box-shadow: 0 1px 0 var(--linea);
+  }
+  .cabecera-con-fondo::before {
+    opacity: 1;
+  }
+
+  .enlace-menu {
+    position: relative;
+    width: fit-content;
+    transition: color 0.3s ease;
+  }
+  .enlace-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15rem;
+    width: 100%;
+    height: 2px;
+    background: var(--color-rosa-hilo);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .enlace-menu:hover,
+  .enlace-menu:focus-visible {
+    color: var(--color-terracota);
+  }
+
+  .enlace-menu:hover::after,
+  .enlace-menu:focus-visible::after,
+  .enlace-menu.activo::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hilo-video .hilo-trazo {
+    stroke-width: 3;
+    animation-delay: 0.8s;
+  }
+
+  @media (width < 48rem) {
+    .hilo-video .hilo-trazo {
+      stroke-width: 7;
+    }
+  }
+
+  .hilo-trazo {
+    stroke: var(--color-rosa-hilo);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dibujar-hilo 3.5s 0.3s cubic-bezier(0.6, 0.1, 0.3, 1) forwards;
+  }
+
+  .cinta-pista::before {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 2px;
+    margin-top: -1px;
+    background: var(--color-rosa-hilo);
+  }
+
+  .cinta-pista span {
+    position: relative;
+    padding-inline: 0.6rem;
+    background: var(--color-terracota);
+  }
+
+  .cinta-pista .cinta-circulo {
+    flex: none;
+    width: 0.75em;
+    height: 0.75em;
+    padding: 0;
+    border: 2.5px solid var(--color-crema);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  .costura::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    z-index: 1;
+    border: 1.5px dashed rgb(255 255 255 / 0.65);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .etiqueta-precio {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    padding: 0.45rem 0.9rem 0.45rem 1.6rem;
+    background:
+      radial-gradient(
+        circle at 0.7rem 50%,
+        var(--color-tinta) 0 3px,
+        transparent 3.5px
+      ),
+      var(--color-crema);
+    color: var(--color-tinta);
+    font-family: var(--font-titulo);
+    font-size: 0.95rem;
+    font-weight: 700;
+    clip-path: polygon(0.6rem 0, 100% 0, 100% 100%, 0.6rem 100%, 0 50%);
+    filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.15));
+    transform-origin: 0.7rem 50%;
+  }
+  .etiqueta-precio small {
+    font-family: var(--font-texto);
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+
+  .hilo-footer .hilo-trazo {
+    stroke-width: 3;
+  }
+}
