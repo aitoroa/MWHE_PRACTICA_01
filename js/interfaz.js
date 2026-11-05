@@ -26,3 +26,22 @@ document.addEventListener("keydown", function (evento) {
     botonMenu.focus();
   }
 });
+
+const botonTema = document.querySelector("#boton-tema");
+const raizHtml = document.documentElement;
+
+function actualizarBotonTema(esOscuro) {
+  botonTema.setAttribute("aria-pressed", esOscuro);
+  botonTema.setAttribute(
+    "aria-label",
+    esOscuro ? "Activar modo claro" : "Activar modo oscuro",
+  );
+}
+
+actualizarBotonTema(raizHtml.classList.contains("dark"));
+
+botonTema.addEventListener("click", function () {
+  const esOscuro = raizHtml.classList.toggle("dark");
+  actualizarBotonTema(esOscuro);
+  localStorage.setItem("tema", esOscuro ? "oscuro" : "claro");
+});
