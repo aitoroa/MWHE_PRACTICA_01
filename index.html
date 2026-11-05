@@ -1,19 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ENTRE HILOS</title>
+    <title>ENTRE HILOS · Mercería y telas en Malasaña</title>
+    <meta
+      name="description"
+      content="Entre Hilos: telas por metros, mercería, kits de costura y talleres en el barrio de Malasaña, Madrid."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/manifest.json" />
 
     <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Work+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Jost:wght@300..600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Tailwind desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
+      /* Modo oscuro con la clase .dark en <html> (la pone js/interfaz.js) */
+      @custom-variant dark (&:where(.dark, .dark *));
+
       @theme static {
         --color-primary: "#F2E9E4";
         --color-secondary: "#D9CFC1";
@@ -23,9 +56,6 @@
         --font-serif: "Fraunces", Georgia, serif;
       }
     </style>
-
-    <!-- Tailwind desde el CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body
     class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
@@ -797,6 +827,816 @@
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </a>
+  <body>
+    <header></header>
+    <main>
+      <section id="hero"></section>
+
+      <section id="telas"></section>
+
+      <section
+        id="crea-tu-kit"
+        class="bg-oliva py-24 text-crema dark:bg-oliva-oscuro md:py-32"
+        aria-labelledby="titulo-kit"
+      >
+        <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <div data-aos="fade-up">
+              <p class="etiqueta-seccion">Crea tu kit</p>
+              <h2
+                id="titulo-kit"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                tú eliges,
+                <span class="font-acento font-normal tracking-normal italic"
+                  >nosotras</span
+                >
+                lo preparamos
+              </h2>
+              <p class="mt-6 max-w-lg text-lg text-crema/85">
+                Elige qué quieres coser y te dejamos en una bolsa la tela
+                cortada, el patrón y todo lo que necesitas. Lo recoges en tienda
+                en 24 horas.
+              </p>
+            </div>
+
+            <form id="form-kit" class="mt-12 space-y-10" novalidate>
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit">
+                  <span>1</span> ¿Qué quieres coser?
+                </legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="tote"
+                      data-nombre="Bolsa tote"
+                      data-metros="0.8"
+                      data-precio="4"
+                      checked
+                    />
+                    Bolsa tote
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="delantal"
+                      data-nombre="Delantal"
+                      data-metros="1.2"
+                      data-precio="6"
+                    />
+                    Delantal
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="cojin"
+                      data-nombre="Funda de cojín"
+                      data-metros="0.6"
+                      data-precio="3"
+                    />
+                    Funda de cojín
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="proyecto"
+                      value="neceser"
+                      data-nombre="Neceser"
+                      data-metros="0.4"
+                      data-precio="3"
+                    />
+                    Neceser
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit"><span>2</span> Elige la tela</legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="lino"
+                      data-nombre="Lino arena"
+                      data-precio="18.90"
+                      data-muestra="muestra-lino"
+                      checked
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-lino.svg"
+                      alt=""
+                    />
+                    Lino arena
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="vichy"
+                      data-nombre="Vichy merienda"
+                      data-precio="9.50"
+                      data-muestra="muestra-vichy"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-vichy.svg"
+                      alt=""
+                    />
+                    Vichy merienda
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="lunares"
+                      data-nombre="Lunares verbena"
+                      data-precio="12.50"
+                      data-muestra="muestra-lunares"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-lunares.svg"
+                      alt=""
+                    />
+                    Lunares verbena
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="radio"
+                      name="tela"
+                      value="rayas"
+                      data-nombre="Rayas cantábrico"
+                      data-precio="11"
+                      data-muestra="muestra-rayas"
+                    />
+                    <img
+                      class="punto-muestra"
+                      src="assets/muestras/muestra-rayas.svg"
+                      alt=""
+                    />
+                    Rayas cantábrico
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset data-aos="fade-up">
+                <legend class="paso-kit">
+                  <span>3</span> Añade lo que te falte
+                </legend>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="hilo"
+                      data-nombre="Hilo a juego"
+                      data-precio="2.50"
+                      checked
+                    />
+                    Hilo a juego · 2,50 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="cremallera"
+                      data-nombre="Cremallera"
+                      data-precio="1.80"
+                    />
+                    Cremallera · 1,80 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="botones"
+                      data-nombre="Botones de nácar"
+                      data-precio="4.50"
+                    />
+                    Botones de nácar · 4,50 €
+                  </label>
+                  <label class="chip">
+                    <input
+                      class="sr-only"
+                      type="checkbox"
+                      name="extra"
+                      value="clase"
+                      data-nombre="Clase exprés (30 min)"
+                      data-precio="10"
+                    />
+                    Clase exprés 30 min · 10 €
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <aside
+            class="lg:col-span-5"
+            aria-labelledby="titulo-tu-kit"
+            data-aos="fade-up"
+          >
+            <div
+              class="tarjeta-kit sticky top-28 rounded-sm bg-crema p-6 text-tinta shadow-2xl dark:bg-noche dark:text-crema md:p-8"
+            >
+              <div
+                class="costura relative aspect-[5/3] overflow-hidden rounded-sm"
+                aria-hidden="true"
+              >
+                <img
+                  id="kit-muestra"
+                  src="assets/muestras/muestra-lino.svg"
+                  alt=""
+                  width="400"
+                  height="500"
+                  class="size-full object-cover"
+                />
+              </div>
+              <div class="mt-6 flex items-baseline justify-between gap-4">
+                <h3
+                  id="titulo-tu-kit"
+                  class="font-titulo text-3xl font-extrabold lowercase"
+                >
+                  tu kit
+                </h3>
+                <p
+                  id="kit-proyecto"
+                  class="font-acento text-2xl text-terracota italic"
+                >
+                  Bolsa tote
+                </p>
+              </div>
+              <ul
+                id="kit-lista"
+                class="mt-4 divide-y divide-dashed divide-tinta/25 border-y border-dashed border-tinta/25 text-sm dark:divide-crema/25 dark:border-crema/25"
+              >
+                <li class="flex justify-between py-2">
+                  <span>Lino arena · 0,8 m</span><span>15,12 €</span>
+                </li>
+              </ul>
+              <div class="mt-5 flex items-end justify-between">
+                <span class="text-xs tracking-[0.25em] uppercase">Total</span>
+                <output
+                  id="kit-total"
+                  form="form-kit"
+                  class="font-titulo text-5xl font-extrabold"
+                  aria-live="polite"
+                  >21,62 €</output
+                >
+              </div>
+              <button
+                id="boton-reservar-kit"
+                type="submit"
+                form="form-kit"
+                class="boton boton-primario mt-6 w-full justify-center"
+              >
+                Reservar mi kit
+              </button>
+              <p
+                id="kit-mensaje"
+                class="mt-4 hidden text-center text-sm text-oliva dark:text-rosa-hilo"
+                role="status"
+              ></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section
+        id="talleres"
+        class="bg-lino py-24 dark:bg-tinta md:py-32"
+        aria-labelledby="titulo-talleres"
+      >
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div class="grid gap-14 lg:grid-cols-2 lg:gap-20">
+            <div class="relative" data-aos="fade-up">
+              <p class="etiqueta-seccion">Talleres</p>
+              <h2
+                id="titulo-talleres"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                no lo tires.
+                <span
+                  class="block font-acento font-normal tracking-normal text-terracota italic"
+                  >cóselo tú.</span
+                >
+              </h2>
+              <p class="mt-6 max-w-md text-lg text-tinta/80 dark:text-crema/80">
+                Talleres en la trastienda para aprender a coser, remendar y
+                transformar. Trae tu ropa o tus telas, o llévate de la tienda el
+                pack del taller con todo lo que necesitas.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-xs tracking-[0.3em] uppercase">
+                Qué traer al taller
+              </h3>
+              <ul class="mt-4 border-t border-tinta/20 dark:border-crema/20">
+                <li class="fila-servicio">
+                  <span>Tu ropa</span><span>ese vaquero roto</span>
+                </li>
+                <li class="fila-servicio">
+                  <span>Tus telas</span><span>y tus retales</span>
+                </li>
+                <li class="fila-servicio">
+                  <span>El pack del taller</span><span>desde 12 €</span>
+                </li>
+              </ul>
+              <p class="mt-6 max-w-md text-tinta/70 dark:text-crema/70">
+                ¿No tienes nada que traer? El pack se compra en la tienda y
+                lleva la tela cortada, hilo a juego, agujas y el patrón del
+                taller.
+              </p>
+            </div>
+          </div>
+
+          <h3
+            class="mt-24 font-titulo text-3xl font-extrabold lowercase md:text-4xl"
+            data-aos="fade-up"
+          >
+            Próximos talleres
+          </h3>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <article class="taller" data-aos="fade-up">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Jueves · 18:30
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                pierde el miedo a la máquina
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                Enhebrar, coser recto y rematar. Sales con tu primer neceser.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">35 €</span
+                ><span class="plazas">Quedan 3 plazas</span>
+              </p>
+            </article>
+            <article class="taller" data-aos="fade-up" data-aos-delay="100">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Sábados · 11:00
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                sashiko y remiendo visible
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                La técnica japonesa para que los rotos se luzcan. Trae tu
+                vaquero.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">28 €</span
+                ><span class="plazas">Quedan 5 plazas</span>
+              </p>
+            </article>
+            <article class="taller" data-aos="fade-up" data-aos-delay="200">
+              <p class="text-xs tracking-[0.25em] text-terracota uppercase">
+                Último viernes de mes
+              </p>
+              <h4 class="mt-3 font-titulo text-2xl font-bold lowercase">
+                costura y merienda
+              </h4>
+              <p class="mt-2 text-sm text-tinta/70 dark:text-crema/70">
+                Trae lo que tengas a medias. Ponemos las máquinas y el café.
+              </p>
+              <p class="mt-6 flex items-center justify-between text-sm">
+                <span class="font-semibold">Gratis</span
+                ><span class="plazas plazas-agotadas">Completo</span>
+              </p>
+            </article>
+          </div>
+
+          <!-- Preguntas frecuentes (acordeón jQuery) -->
+          <div class="mt-24 grid gap-10 lg:grid-cols-12">
+            <h3
+              class="font-titulo text-3xl font-extrabold lowercase md:text-4xl lg:col-span-4"
+              data-aos="fade-up"
+            >
+              preguntas frecuentes
+            </h3>
+            <div
+              class="divide-y divide-tinta/20 border-y border-tinta/20 dark:divide-crema/20 dark:border-crema/20 lg:col-span-8"
+              data-aos="fade-up"
+            >
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-1"
+                >
+                  ¿Tengo que traer algo al taller?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-1" class="respuesta">
+                  <p>
+                    Puedes traer tu ropa o tus telas. Si no tienes nada, compra
+                    el pack del taller en la tienda y vienes con todo listo.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-2"
+                >
+                  ¿Qué lleva el pack del taller?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-2" class="respuesta">
+                  <p>
+                    La tela ya cortada, hilo a juego, agujas y el patrón del
+                    proyecto. Cuesta desde 12 € y te lo preparamos al momento.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-3"
+                >
+                  ¿Necesito máquina para los talleres?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-3" class="respuesta">
+                  <p>
+                    No, en la trastienda tenemos cuatro máquinas. Solo trae
+                    ganas (y el vaquero roto, si vienes a sashiko).
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="pregunta"
+                  aria-expanded="false"
+                  aria-controls="respuesta-4"
+                >
+                  ¿Cómo me apunto?
+                  <span class="icono-mas" aria-hidden="true"></span>
+                </button>
+                <div id="respuesta-4" class="respuesta">
+                  <p>
+                    En la tienda, llamando al 912 345 678 o escribiendo a
+                    hola@entrehilos.es. Las plazas son pocas, así que mejor con
+                    tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="novedades"
+        class="overflow-hidden bg-tinta py-24 text-crema dark:bg-noche md:py-32"
+        aria-labelledby="titulo-novedades"
+      >
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
+            data-aos="fade-up"
+          >
+            <div>
+              <p class="etiqueta-seccion">Novedades y ofertas</p>
+              <h2
+                id="titulo-novedades"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                recién
+                <span
+                  class="font-acento font-normal tracking-normal text-rosa-hilo italic"
+                  >llegado</span
+                >
+              </h2>
+            </div>
+            <div class="flex gap-2">
+              <button
+                id="novedades-anterior"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad anterior"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                id="novedades-siguiente"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad siguiente"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="swiper slider-novedades mt-14" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-merino.svg"
+                    alt="Ovillos de lana merino rosa"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      lana merino
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Ovillos de 50 g · 12 colores
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">6,90 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-retales.svg"
+                    alt="Cesta de retales de colores"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−30%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      retales al peso
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Todo noviembre · el kilo
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >20,00 €</del
+                    >14,00 €
+                  </p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-botones.svg"
+                    alt="Botones de corozo sobre fondo verde oliva"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      botones de corozo
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Semilla de tagua · la docena
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">7,50 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-patron.svg"
+                    alt="Patrón de papel del delantal Malasaña"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Patrón propio</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      delantal malasaña
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Patrón en papel · tallas XS a XL
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">8,00 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-terciopelo.svg"
+                    alt="Cinta de terciopelo terracota"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      cinta de terciopelo
+                    </h3>
+                    <p class="text-sm text-crema/65">2,5 cm · el metro</p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >3,20 €</del
+                    >2,72 €
+                  </p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-escoces.svg"
+                    alt="Kit de sashiko sobre tela de cuadros"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      kit sashiko
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Aguja, hilo y plantillas
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >18,00 €</del
+                    >15,30 €
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-pagination mt-10"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tienda"
+        class="py-24 dark:bg-tinta md:py-32"
+        aria-labelledby="titulo-tienda"
+      >
+        <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
+          <div data-aos="fade-up">
+            <p class="etiqueta-seccion">La tienda</p>
+            <h2
+              id="titulo-tienda"
+              class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+            >
+              pásate
+              <span class="font-acento font-normal tracking-normal italic"
+                >a vernos</span
+              >
+            </h2>
+
+            <p id="estado-tienda" class="estado-tienda mt-8" role="status">
+              Consultando horario…
+            </p>
+
+            <address class="mt-12 not-italic">
+              <ul class="space-y-9">
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"
+                    />
+                    <circle cx="12" cy="10" r="2.3" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Calle del Pez, 18</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      28004 Madrid · Metro Noviciado (L2)
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                  <div>
+                    <p class="text-lg">Lun–Vie 10:00–14:00 · 17:00–20:30</p>
+                    <p class="text-lg text-tinta/60 dark:text-crema/60">
+                      Sáb 10:30–14:30 · Dom cerrado
+                    </p>
+                  </div>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
+                    <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="mailto:hola@entrehilos.es" class="enlace-subrayado"
+                      >hola@entrehilos.es</a
+                    >
+                  </p>
+                </li>
+
+                <li class="flex gap-5">
+                  <svg
+                    class="icono-contacto"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6A2 2 0 0 1 18.4 19.5 15.5 15.5 0 0 1 4.5 5.6a2 2 0 0 1 2.1-2.1Z"
+                    />
+                  </svg>
+                  <p class="text-lg">
+                    <a href="tel:+34912345678" class="enlace-subrayado"
+                      >+34 912 345 678</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div
+            class="mapa min-h-80 overflow-hidden rounded-sm border border-tinta/15 dark:border-crema/15"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <iframe
+              title="Mapa con la ubicación de Entre Hilos en la calle del Pez, Madrid"
+              src="https://maps.google.com/maps?q=Calle%20del%20Pez%2018%2C%2028004%20Madrid&amp;z=16&amp;output=embed"
+              class="block size-full min-h-80"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
 
     <!-- JavaScript -->
     <script
@@ -806,5 +1646,8 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="js/interfaz.js"></script>
+    <script src="js/secciones.js"></script>
+
+    <script src="js/librerias.js"></script>
   </body>
 </html>
