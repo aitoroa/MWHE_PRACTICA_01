@@ -34,7 +34,7 @@ function actualizarBotonTema(esOscuro) {
   botonTema.setAttribute("aria-pressed", esOscuro);
   botonTema.setAttribute(
     "aria-label",
-    esOscuro ? "Activar modo claro" : "Activar modo oscuro",
+    esOscuro ? "Activar modo claro" : "Activar modo oscuro"
   );
 }
 
@@ -57,9 +57,15 @@ function alHacerScroll() {
 
   const finVideo = videoPortada.getBoundingClientRect().bottom;
   const menuAbierto = !menu.classList.contains("hidden");
-  cabecera.classList.toggle("cabecera-oculta", finVideo > 100 && !menuAbierto);
+  cabecera.classList.toggle(
+    "-translate-y-full",
+    finVideo > 100 && !menuAbierto
+  );
 
-  volverArriba.classList.toggle("visible", scrollActual > 800);
+  const mostrarBoton = scrollActual > 800;
+  volverArriba.classList.toggle("opacity-0", !mostrarBoton);
+  volverArriba.classList.toggle("translate-y-4", !mostrarBoton);
+  volverArriba.classList.toggle("pointer-events-none", !mostrarBoton);
 }
 
 window.addEventListener("scroll", alHacerScroll, { passive: true });
@@ -82,7 +88,7 @@ const observador = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "-45% 0px -50% 0px" },
+  { rootMargin: "-45% 0px -50% 0px" }
 );
 
 secciones.forEach(function (seccion) {

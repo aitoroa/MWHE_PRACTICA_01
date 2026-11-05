@@ -57,9 +57,9 @@ function actualizarKit() {
   kitProyecto.textContent = proyecto.dataset.nombre;
 
   kitTotal.textContent = formatearPrecio(total);
-  kitTotal.classList.remove("total-actualizado");
+  kitTotal.classList.remove("animate-saltito");
   void kitTotal.offsetWidth;
-  kitTotal.classList.add("total-actualizado");
+  kitTotal.classList.add("animate-saltito");
 
   kitMensaje.classList.add("hidden");
 }
