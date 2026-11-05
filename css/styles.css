@@ -317,3 +317,21 @@
     box-shadow: 0 0 0 10px rgb(119 123 85 / 0);
   }
 }
+
+.slider-novedades {
+  overflow: visible;
+}
+.slider-novedades .swiper-slide {
+  height: auto;
+}
+.slider-novedades .swiper-pagination.swiper-pagination-progressbar {
+  position: relative;
+  top: auto;
+  height: 2px;
+  background: rgb(244 237 226 / 0.2);
+}
+.slider-novedades
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  background: var(--color-rosa-hilo);
+}
