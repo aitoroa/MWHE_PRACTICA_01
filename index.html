@@ -319,7 +319,6 @@
               </h2>
             </div>
 
-            <!-- Botones de filtro: data-filtro debe coincidir con data-categoria de cada tela -->
             <div
               class="flex flex-wrap gap-2"
               role="group"
@@ -369,6 +368,310 @@
               </button>
             </div>
           </div>
+          <div
+            class="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4"
+          >
+            <!-- Tela 1 -->
+            <article class="tela group" data-categoria="lino">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lino.svg"
+                  alt="Muestra de lino lavado color arena"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >18,90 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lino arena en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lino arena
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                100% lino lavado · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 2 -->
+            <article class="tela group" data-categoria="algodon">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-vichy.svg"
+                  alt="Muestra de algodón de cuadros vichy terracota"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >9,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar vichy merienda en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                vichy merienda
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Algodón 100% · 150 cm
+              </p>
+            </article>
+
+            <!-- Tela 3 -->
+            <article class="tela group" data-categoria="estampadas">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lunares.svg"
+                  alt="Muestra de viscosa negra con lunares rosas"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >12,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lunares verbena en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lunares verbena
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Viscosa estampada · 145 cm
+              </p>
+            </article>
+
+            <!-- Tela 4 -->
+            <article class="tela group" data-categoria="lana">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-espiga.svg"
+                  alt="Muestra de paño de lana en espiga verde oliva"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >24,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar espiga de la abuela en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                espiga de la abuela
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Paño de lana · 150 cm
+              </p>
+            </article>
+
+            <!-- Tela 5 -->
+            <article class="tela group" data-categoria="algodon">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-rayas.svg"
+                  alt="Muestra de algodón de rayas verde oliva y crema"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >11,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar rayas cantábrico en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                rayas cantábrico
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Lona de algodón · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 6 -->
+            <article class="tela group" data-categoria="lino">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-lino-rosa.svg"
+                  alt="Muestra de lino rosa empolvado"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >19,50 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar lino rosa hilo en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                lino rosa hilo
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                100% lino lavado · 140 cm
+              </p>
+            </article>
+
+            <!-- Tela 7 -->
+            <article class="tela group" data-categoria="estampadas">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-flores.svg"
+                  alt="Muestra de popelín con florecitas"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >13,90 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar florecitas del huerto en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                florecitas del huerto
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Popelín estampado · 145 cm
+              </p>
+            </article>
+
+            <!-- Tela 8 -->
+            <article class="tela group" data-categoria="lana">
+              <div class="relative overflow-hidden rounded-sm">
+                <img
+                  src="assets/muestras/muestra-escoces.svg"
+                  alt="Muestra de lana de cuadros escoceses terracota"
+                  width="400"
+                  height="500"
+                  loading="lazy"
+                  class="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span class="etiqueta-precio absolute bottom-3 left-3"
+                  >22,00 € <small>/m</small></span
+                >
+                <button
+                  type="button"
+                  class="boton-favorito"
+                  aria-pressed="false"
+                  aria-label="Guardar escocés de invierno en favoritos"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h3
+                class="mt-4 font-titulo text-xl font-bold lowercase md:text-2xl"
+              >
+                escocés de invierno
+              </h3>
+              <p class="text-sm text-tinta/65 dark:text-crema/65">
+                Lana y mezcla · 150 cm
+              </p>
+            </article>
+          </div>
+
+          <p class="mt-12 text-center text-sm text-tinta/65 dark:text-crema/65">
+            Cortamos desde 25 cm. Si buscas algo que no ves,
+            <a href="#tienda" class="enlace-subrayado">pregúntanos</a>.
+          </p>
         </div>
       </section>
     </main>
