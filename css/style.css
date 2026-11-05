@@ -18,12 +18,12 @@
 
   html,
   body {
-    overflow-x: clip; /* que nada (animaciones, slider...) cree scroll lateral */
+    overflow-x: clip;
   }
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; /* que la cabecera fija no tape los títulos */
+    scroll-padding-top: 5rem;
   }
 
   ::selection {
@@ -53,16 +53,12 @@
 }
 
 @layer components {
-  /* ---------- 2.1 Cabecera ---------- */
-  /* COMMIT 1 (AITOR): "Cabecera con navegación y menú móvil" */
   .cabecera {
     transition:
       transform 0.4s ease,
       box-shadow 0.4s ease;
   }
-  /* El fondo va en un ::before y no en la propia cabecera: si la cabecera
-     llevara backdrop-filter, el desenfoque del menú móvil (que está dentro)
-     no funcionaría. Así los dos se ven con la misma transparencia. */
+
   .cabecera::before {
     content: "";
     position: absolute;
