@@ -101,31 +101,6 @@
     animation: dibujar-hilo 3.5s 0.3s cubic-bezier(0.6, 0.1, 0.3, 1) forwards;
   }
 
-  .cinta-pista::before {
-    content: "";
-    position: absolute;
-    inset: 50% 0 auto;
-    height: 2px;
-    margin-top: -1px;
-    background: var(--color-rosa-hilo);
-  }
-
-  .cinta-pista span {
-    position: relative;
-    padding-inline: 0.6rem;
-    background: var(--color-terracota);
-  }
-
-  .cinta-pista .cinta-circulo {
-    flex: none;
-    width: 0.75em;
-    height: 0.75em;
-    padding: 0;
-    border: 2.5px solid var(--color-crema);
-    border-radius: 50%;
-    background: transparent;
-  }
-
   .costura::before {
     content: "";
     position: absolute;
@@ -141,8 +116,7 @@
     align-items: baseline;
     gap: 0.2rem;
     padding: 0.45rem 0.9rem 0.45rem 1.6rem;
-    background:
-      radial-gradient(
+    background: radial-gradient(
         circle at 0.7rem 50%,
         var(--color-tinta) 0 3px,
         transparent 3.5px
