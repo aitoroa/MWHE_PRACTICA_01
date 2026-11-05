@@ -539,21 +539,216 @@
         </div>
       </section>
 
-      <section id="novedades">
-        <div>
-          <div>
-            <h2 id="titulo-novedades"></h2>
+      <section
+        id="novedades"
+        class="overflow-hidden bg-tinta py-24 text-crema dark:bg-noche md:py-32"
+        aria-labelledby="titulo-novedades"
+      >
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
+            data-aos="fade-up"
+          >
+            <div>
+              <p class="etiqueta-seccion">Novedades y ofertas</p>
+              <h2
+                id="titulo-novedades"
+                class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                recién
+                <span
+                  class="font-acento font-normal tracking-normal text-rosa-hilo italic"
+                  >llegado</span
+                >
+              </h2>
+            </div>
+            <div class="flex gap-2">
+              <button
+                id="novedades-anterior"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad anterior"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                id="novedades-siguiente"
+                type="button"
+                class="flecha-slider"
+                aria-label="Novedad siguiente"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div>
-            <button id="novedades-anterior" type="button"></button>
-            <button id="novedades-siguiente" type="button"></button>
-          </div>
+          <div class="swiper slider-novedades mt-14" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-merino.svg"
+                    alt="Ovillos de lana merino rosa"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      lana merino
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Ovillos de 50 g · 12 colores
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">6,90 €</p>
+                </div>
+              </article>
 
-          <div class="swiper slider-novedades">
-            <div class="swiper-wrapper"></div>
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-retales.svg"
+                    alt="Cesta de retales de colores"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−30%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      retales al peso
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Todo noviembre · el kilo
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >20,00 €</del
+                    >14,00 €
+                  </p>
+                </div>
+              </article>
 
-            <div class="swiper-pagination"></div>
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-botones.svg"
+                    alt="Botones de corozo sobre fondo verde oliva"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Nuevo</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      botones de corozo
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Semilla de tagua · la docena
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">7,50 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-patron.svg"
+                    alt="Patrón de papel del delantal Malasaña"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia">Patrón propio</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      delantal malasaña
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Patrón en papel · tallas XS a XL
+                    </p>
+                  </div>
+                  <p class="font-titulo text-xl font-bold">8,00 €</p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-terciopelo.svg"
+                    alt="Cinta de terciopelo terracota"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      cinta de terciopelo
+                    </h3>
+                    <p class="text-sm text-crema/65">2,5 cm · el metro</p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >3,20 €</del
+                    >2,72 €
+                  </p>
+                </div>
+              </article>
+
+              <article class="swiper-slide novedad">
+                <div class="relative overflow-hidden rounded-sm">
+                  <img
+                    src="assets/muestras/muestra-escoces.svg"
+                    alt="Kit de sashiko sobre tela de cuadros"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    class="aspect-[4/5] w-full object-cover"
+                  />
+                  <span class="insignia insignia-oferta">−15%</span>
+                </div>
+                <div class="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-titulo text-2xl font-bold lowercase">
+                      kit sashiko
+                    </h3>
+                    <p class="text-sm text-crema/65">
+                      Aguja, hilo y plantillas
+                    </p>
+                  </div>
+                  <p class="text-right font-titulo text-xl font-bold">
+                    <del class="block text-sm font-normal text-crema/50"
+                      >18,00 €</del
+                    >15,30 €
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-pagination mt-10"></div>
           </div>
         </div>
       </section>
