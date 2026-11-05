@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -64,6 +64,19 @@
         --font-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
         --font-texto: "Jost", "Helvetica Neue", Arial, sans-serif;
         --font-acento: "Instrument Serif", Georgia, serif;
+
+        /* Animaciones*/
+        --animate-bajar-menu: bajar-menu 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+        --animate-bajar-linea: bajar-linea 2s ease-in-out infinite;
+        --animate-flotar: flotar 7s ease-in-out infinite;
+        --animate-flotar-lento: flotar 9s ease-in-out -2s infinite;
+        --animate-flotar-rapido: flotar 6s ease-in-out -4s infinite;
+        --animate-cinta: desplazar-cinta 35s linear infinite;
+        --animate-balancear: balancear 1.2s ease-in-out;
+        --animate-latido: latido 2.4s ease-in-out infinite;
+        --animate-latido-corto: latido 0.5s ease;
+        --animate-girar: girar 22s linear infinite;
+        --animate-saltito: saltito 0.45s ease;
       }
     </style>
 
@@ -79,7 +92,11 @@
   <body
     class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
   >
-    <a href="#contenido" class="saltar-contenido">Saltar al contenido</a>
+    <a
+      href="#contenido"
+      class="absolute -top-16 left-4 z-100 rounded-full bg-tinta px-4 py-2.5 text-crema transition-[top] duration-200 focus:top-4"
+      >Saltar al contenido</a
+    >
 
     <header
       id="cabecera"
