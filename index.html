@@ -231,6 +231,144 @@
               >
             </div>
           </div>
+          <div
+            class="collage relative h-[380px] sm:h-[460px] lg:col-span-5 lg:h-[560px]"
+            aria-hidden="true"
+          >
+            <div
+              class="costura flotar absolute top-0 right-0 h-[72%] w-[62%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-lino.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <div
+              class="costura flotar flotar-2 absolute bottom-6 left-0 h-[52%] w-[48%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-vichy.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <div
+              class="costura flotar flotar-3 absolute right-[10%] bottom-0 h-[34%] w-[36%] overflow-hidden rounded-sm shadow-2xl"
+            >
+              <img
+                src="assets/muestras/muestra-lunares.svg"
+                alt=""
+                width="400"
+                height="500"
+                class="size-full object-cover"
+              />
+            </div>
+            <span
+              class="etiqueta-precio absolute top-[58%] right-[40%] z-10 -rotate-6 whitespace-nowrap"
+              >lino lavado · 18,90 €/m</span
+            >
+          </div>
+        </div>
+        <div
+          class="cinta relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
+          aria-hidden="true"
+        >
+          <div
+            class="cinta-pista flex w-max items-center gap-6 font-titulo text-2xl font-bold whitespace-nowrap lowercase md:text-3xl"
+          >
+            <span>algodón orgánico</span><span class="cinta-circulo"></span
+            ><span>lino lavado</span><span class="cinta-circulo"></span
+            ><span>lana merino</span><span class="cinta-circulo"></span
+            ><span>botones de nácar</span><span class="cinta-circulo"></span
+            ><span>cremalleras</span><span class="cinta-circulo"></span
+            ><span>patrones</span><span class="cinta-circulo"></span
+            ><span>talleres</span><span class="cinta-circulo"></span
+            ><span>segunda vida</span><span class="cinta-circulo"></span>
+            <span>algodón orgánico</span><span class="cinta-circulo"></span
+            ><span>lino lavado</span><span class="cinta-circulo"></span
+            ><span>lana merino</span><span class="cinta-circulo"></span
+            ><span>botones de nácar</span><span class="cinta-circulo"></span
+            ><span>cremalleras</span><span class="cinta-circulo"></span
+            ><span>patrones</span><span class="cinta-circulo"></span
+            ><span>talleres</span><span class="cinta-circulo"></span
+            ><span>segunda vida</span><span class="cinta-circulo"></span>
+          </div>
+        </div>
+      </section>
+      <section id="telas" class="py-24 md:py-32" aria-labelledby="titulo-telas">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+          >
+            <div data-aos="fade-up">
+              <p class="etiqueta-seccion">Telas por metros</p>
+              <h2
+                id="titulo-telas"
+                class="mt-5 max-w-3xl font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight lowercase md:text-7xl"
+              >
+                telas que
+                <span class="font-acento font-normal tracking-normal italic"
+                  >dan ganas</span
+                >
+                de coser
+              </h2>
+            </div>
+
+            <!-- Botones de filtro: data-filtro debe coincidir con data-categoria de cada tela -->
+            <div
+              class="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filtrar telas"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <button
+                type="button"
+                class="filtro filtro-activo"
+                data-filtro="todas"
+                aria-pressed="true"
+              >
+                Todas
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="lino"
+                aria-pressed="false"
+              >
+                Lino
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="algodon"
+                aria-pressed="false"
+              >
+                Algodón
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="lana"
+                aria-pressed="false"
+              >
+                Lana
+              </button>
+              <button
+                type="button"
+                class="filtro"
+                data-filtro="estampadas"
+                aria-pressed="false"
+              >
+                Estampadas
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
