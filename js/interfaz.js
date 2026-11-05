@@ -88,3 +88,43 @@ const observador = new IntersectionObserver(
 secciones.forEach(function (seccion) {
   observador.observe(seccion);
 });
+
+$(function () {
+  $(".filtro").on("click", function () {
+    const categoria = $(this).data("filtro");
+
+    $(".filtro").removeClass("filtro-activo").attr("aria-pressed", "false");
+    $(this).addClass("filtro-activo").attr("aria-pressed", "true");
+
+    $(".tela").each(function () {
+      const coincide =
+        categoria === "todas" || $(this).data("categoria") === categoria;
+
+      if (coincide) {
+        $(this).stop(true, true).fadeIn(350);
+      } else {
+        $(this).stop(true, true).fadeOut(200);
+      }
+    });
+  });
+});
+
+document.querySelectorAll(".boton-favorito").forEach(function (boton) {
+  boton.addEventListener("click", function () {
+    const activo = boton.getAttribute("aria-pressed") === "true";
+    boton.setAttribute("aria-pressed", !activo);
+  });
+});
+
+const formBoletin = document.querySelector("#form-boletin");
+const mensajeBoletin = document.querySelector("#mensaje-boletin");
+
+formBoletin.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  mensajeBoletin.textContent =
+    "¡Hecho! Te escribiremos cuando lleguen telas nuevas.";
+  mensajeBoletin.classList.remove("hidden");
+  formBoletin.reset();
+});
+
+document.querySelector("#anio").textContent = new Date().getFullYear();
