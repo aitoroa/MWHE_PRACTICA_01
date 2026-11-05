@@ -45,3 +45,46 @@ botonTema.addEventListener("click", function () {
   actualizarBotonTema(esOscuro);
   localStorage.setItem("tema", esOscuro ? "oscuro" : "claro");
 });
+
+const cabecera = document.querySelector("#cabecera");
+const volverArriba = document.querySelector("#volver-arriba");
+const videoPortada = document.querySelector("#inicio");
+
+function alHacerScroll() {
+  const scrollActual = window.scrollY;
+
+  cabecera.classList.toggle("cabecera-con-fondo", scrollActual > 20);
+
+  const finVideo = videoPortada.getBoundingClientRect().bottom;
+  const menuAbierto = !menu.classList.contains("hidden");
+  cabecera.classList.toggle("cabecera-oculta", finVideo > 100 && !menuAbierto);
+
+  volverArriba.classList.toggle("visible", scrollActual > 800);
+}
+
+window.addEventListener("scroll", alHacerScroll, { passive: true });
+alHacerScroll();
+
+const observadorVideo = new ResizeObserver(alHacerScroll);
+observadorVideo.observe(videoPortada);
+
+const secciones = document.querySelectorAll("main section[id]");
+
+const observador = new IntersectionObserver(
+  function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        enlacesMenu.forEach(function (enlace) {
+          const coincide =
+            enlace.getAttribute("href") === "#" + entrada.target.id;
+          enlace.classList.toggle("activo", coincide);
+        });
+      }
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" },
+);
+
+secciones.forEach(function (seccion) {
+  observador.observe(seccion);
+});
