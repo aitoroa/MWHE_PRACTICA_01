@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -48,15 +48,26 @@
       @custom-variant dark (&:where(.dark, .dark *));
 
       @theme static {
-        --color-primary: "#F2E9E4";
-        --color-secondary: "#D9CFC1";
-        --color-accent: "#A7A5A5";
-        --color-neutral: "#3B3B3B";
-        --font-sans: "EB Garamond", "Work Sans", sans-serif;
-        --font-serif: "Fraunces", Georgia, serif;
+        /* Paleta principal */
+        --color-crema: #f4ede2;
+        --color-terracota: #9f4b33;
+        --color-oliva: #777b55;
+        --color-tinta: #292521;
+        --color-rosa-hilo: #c98e94;
+
+        /* Auxiliares (derivados de la paleta, para superficies y modo oscuro) */
+        --color-lino: #e9dfcf;
+        --color-noche: #1c1916;
+        --color-oliva-oscuro: #4e5137;
+
+        /* Tipografías */
+        --font-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
+        --font-texto: "Jost", "Helvetica Neue", Arial, sans-serif;
+        --font-acento: "Instrument Serif", Georgia, serif;
       }
     </style>
   </head>
+
   <body
     class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
   >
@@ -704,15 +715,6 @@
           </p>
         </div>
       </section>
-    </main>
-
-   
-
-  
-  <body>
-    <header></header>
-    <main>
-      
 
       <section
         id="crea-tu-kit"
@@ -1516,7 +1518,7 @@
       </section>
     </main>
 
-     <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
+    <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div class="lg:col-span-2">
@@ -1617,7 +1619,7 @@
         </div>
       </div>
     </footer>
-     <a
+    <a
       href="#inicio"
       id="volver-arriba"
       class="volver-arriba grid size-12 place-items-center rounded-full bg-terracota text-crema shadow-lg hover:bg-tinta focus-visible:bg-tinta dark:hover:bg-crema dark:hover:text-tinta"
