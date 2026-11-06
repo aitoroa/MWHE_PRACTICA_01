@@ -1,4 +1,4 @@
-/* ---------- crear KIT ---------- */
+// CREA TU KIT
 const formKit = document.querySelector("#form-kit");
 const kitMuestra = document.querySelector("#kit-muestra");
 const kitProyecto = document.querySelector("#kit-proyecto");
@@ -67,7 +67,7 @@ function actualizarKit() {
 formKit.addEventListener("change", actualizarKit);
 actualizarKit();
 
-/* ---------- RESERVAR Kit--------- */
+// RESERVAR EL KIT
 formKit.addEventListener("submit", function (evento) {
   evento.preventDefault();
   kitMensaje.textContent =
@@ -79,7 +79,7 @@ formKit.addEventListener("submit", function (evento) {
   kitMensaje.classList.remove("hidden");
 });
 
-/* ---------- preg frecuentes---------- */
+// PREGUNTAS FRECUENTES (jQuery)
 $(function () {
   $(".respuesta").hide();
 
@@ -98,8 +98,7 @@ $(function () {
   });
 });
 
-// FORMULARIO RESERVA
-
+// FORMULARIO RESERVAR PLAZA EN UN TALLER
 const modalReserva = document.querySelector("#modal-reserva");
 const formReserva = document.querySelector("#form-reserva");
 const modalDia = document.querySelector("#modal-dia");
@@ -114,7 +113,6 @@ let botonPulsado = null;
 function abrirModal(boton) {
   botonPulsado = boton;
 
-  // Forms limpio cada vez que se abre
   formReserva.reset();
   formReserva.classList.remove("hidden");
   reservaMensaje.classList.add("hidden");

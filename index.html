@@ -9,6 +9,7 @@
       content="Entre Hilos: telas por metros, mercería, kits de costura y talleres en el barrio de Malasaña, Madrid."
     />
 
+    <!-- FAVICON -->
     <link
       rel="icon"
       type="image/png"
@@ -24,6 +25,7 @@
     />
     <link rel="manifest" href="favicon/manifest.json?v=2" />
 
+    <!-- TIPOGRAFÍAS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +33,7 @@
       rel="stylesheet"
     />
 
+    <!-- CSS DE LIBRERÍAS (AOS, SWIPER) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
@@ -40,10 +43,13 @@
       href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
     />
 
+    <!-- CSS PROPIO -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- TAILWIND v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- SISTEMA DE DISEÑO -->
     <style type="text/tailwindcss">
       @custom-variant dark (&:where(.dark, .dark *));
 
@@ -102,6 +108,7 @@
       >Saltar al contenido</a
     >
 
+    <!-- CABECERA Y NAVEGACIÓN -->
     <header
       id="cabecera"
       class="cabecera fixed inset-x-0 top-0 z-50 -translate-y-full transition-[translate,box-shadow] duration-400 focus-within:translate-y-0"
@@ -160,6 +167,7 @@
           </ul>
         </nav>
 
+        <!-- BOTÓN DE MODO CLARO Y OSCURO -->
         <button
           id="boton-tema"
           type="button"
@@ -184,6 +192,7 @@
           </svg>
         </button>
 
+        <!-- BOTÓN DEL MENÚ MÓVIL -->
         <button
           id="boton-menu"
           type="button"
@@ -208,6 +217,7 @@
     </header>
 
     <main id="contenido">
+      <!-- PANTALLA DE INICIO -->
       <section
         id="inicio"
         class="relative h-svh overflow-hidden bg-tinta text-crema dark:bg-noche"
@@ -225,6 +235,7 @@
           </p>
         </div>
 
+        <!-- HILOS EN MOVIMIENTO -->
         <svg
           class="hilo-video pointer-events-none absolute inset-x-0 top-1/2 z-0 w-full -translate-y-1/2"
           viewBox="0 0 1200 200"
@@ -259,6 +270,7 @@
           />
         </svg>
 
+        <!-- INDICADOR DE DESCENSO -->
         <a
           href="#portada"
           class="indicador-bajar absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-xs tracking-[0.35em] uppercase transition hover:text-rosa-hilo focus-visible:text-rosa-hilo"
@@ -271,6 +283,7 @@
         </a>
       </section>
 
+      <!-- INCIO DE PÁGINA · PORTADA REAL -->
       <section
         id="portada"
         class="relative -scroll-mt-19 overflow-hidden pt-28 md:pt-36"
@@ -349,6 +362,7 @@
             </div>
           </div>
 
+          <!-- COLLAGE DE MUESTRAS -->
           <div
             class="collage relative h-[380px] sm:h-[460px] lg:col-span-5 lg:h-[560px]"
             aria-hidden="true"
@@ -393,6 +407,7 @@
           </div>
         </div>
 
+        <!-- CINTA INFINITA · TEXT MARQUEE -->
         <div
           class="cinta group relative z-10 mt-16 overflow-hidden bg-terracota py-4 text-crema md:mt-24"
           aria-hidden="true"
@@ -486,6 +501,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN TELAS -->
       <section id="telas" class="py-24 md:py-32" aria-labelledby="titulo-telas">
         <div class="mx-auto max-w-7xl px-5 md:px-8">
           <div
@@ -933,6 +949,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN CREA TU KIT -->
       <section
         id="crea-tu-kit"
         class="bg-oliva py-24 text-crema dark:bg-oliva-oscuro md:py-32"
@@ -1272,6 +1289,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN TALLERES -->
       <section
         id="talleres"
         class="bg-lino py-24 dark:bg-tinta md:py-32"
@@ -1592,6 +1610,7 @@
         </div>
       </section>
 
+      <!-- VENTANA MODAL DE RESERVA -->
       <div
         id="modal-reserva"
         class="fixed inset-0 z-60 grid place-items-center p-4 aria-hidden:hidden"
@@ -1730,6 +1749,7 @@
         </div>
       </div>
 
+      <!-- SECCIÓN NOVEDADES Y OFERTAS (slider o carousel con Swiper) -->
       <section
         id="novedades"
         class="overflow-hidden bg-tinta py-24 text-crema dark:bg-noche md:py-32"
@@ -1986,6 +2006,7 @@
         </div>
       </section>
 
+      <!-- SECCIÓN TIENDA (HORARIO Y UBICACIÓN) -->
       <section
         id="tienda"
         class="py-24 dark:bg-oliva-oscuro md:py-32"
@@ -2054,7 +2075,7 @@
                     </p>
                   </div>
                 </li>
-                <!-- Correo -->
+                <!-- Correo electrónico -->
                 <li class="flex gap-5">
                   <svg
                     class="mt-1 size-[1.35rem] flex-none"
@@ -2105,7 +2126,7 @@
             </address>
           </div>
 
-          <!-- Mapa Google Maps -->
+          <!-- Mapa de Google Maps -->
           <div
             class="mapa min-h-80 overflow-hidden rounded-sm border border-tinta/15 dark:border-crema/15"
             data-aos="fade-up"
@@ -2123,6 +2144,7 @@
       </section>
     </main>
 
+    <!-- FOOTER  -->
     <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
       <div class="mx-auto max-w-7xl px-5 md:px-8">
         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -2262,6 +2284,7 @@
       </svg>
     </a>
 
+    <!-- JS DE LIBRERÍAS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

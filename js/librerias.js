@@ -1,3 +1,4 @@
+// SWIPER (Slider de novedades)
 const sliderNovedades = new Swiper(".slider-novedades", {
   slidesPerView: 1.15,
   spaceBetween: 16,
@@ -22,7 +23,7 @@ const sliderNovedades = new Swiper(".slider-novedades", {
   },
 });
 
-//AOS
+//AOS (Animaciones al hacer scroll)
 AOS.init({
   duration: 800,
   easing: "ease-out-cubic",

@@ -1,3 +1,4 @@
+// MENÚ MÓVIL
 const botonMenu = document.querySelector("#boton-menu");
 const textoBotonMenu = document.querySelector("#texto-boton-menu");
 const menu = document.querySelector("#menu");
@@ -20,6 +21,7 @@ enlacesMenu.forEach(function (enlace) {
   });
 });
 
+// Cerrar con la tecla Escape
 document.addEventListener("keydown", function (evento) {
   if (evento.key === "Escape" && !menu.classList.contains("hidden")) {
     abrirMenu(false);
@@ -27,6 +29,7 @@ document.addEventListener("keydown", function (evento) {
   }
 });
 
+// MODO CLARO / OSCURO
 const botonTema = document.querySelector("#boton-tema");
 const raizHtml = document.documentElement;
 
@@ -34,7 +37,7 @@ function actualizarBotonTema(esOscuro) {
   botonTema.setAttribute("aria-pressed", esOscuro);
   botonTema.setAttribute(
     "aria-label",
-    esOscuro ? "Activar modo claro" : "Activar modo oscuro"
+    esOscuro ? "Activar modo claro" : "Activar modo oscuro",
   );
 }
 
@@ -46,6 +49,7 @@ botonTema.addEventListener("click", function () {
   localStorage.setItem("tema", esOscuro ? "oscuro" : "claro");
 });
 
+// CABECERA AL HACER SCROLL Y BOTÓN VOLVER ARRIBA
 const cabecera = document.querySelector("#cabecera");
 const volverArriba = document.querySelector("#volver-arriba");
 const videoPortada = document.querySelector("#inicio");
@@ -59,7 +63,7 @@ function alHacerScroll() {
   const menuAbierto = !menu.classList.contains("hidden");
   cabecera.classList.toggle(
     "-translate-y-full",
-    finVideo > 100 && !menuAbierto
+    finVideo > 100 && !menuAbierto,
   );
 
   const mostrarBoton = scrollActual > 800;
@@ -74,6 +78,7 @@ alHacerScroll();
 const observadorVideo = new ResizeObserver(alHacerScroll);
 observadorVideo.observe(videoPortada);
 
+// ENLACE ACTIVO DEL MENÚ
 const secciones = document.querySelectorAll("main section[id]");
 
 const observador = new IntersectionObserver(
@@ -88,13 +93,14 @@ const observador = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "-45% 0px -50% 0px" }
+  { rootMargin: "-45% 0px -50% 0px" },
 );
 
 secciones.forEach(function (seccion) {
   observador.observe(seccion);
 });
 
+// FILTRO DE TELAS (jQuery)
 $(function () {
   $(".filtro").on("click", function () {
     const categoria = $(this).data("filtro");
@@ -115,6 +121,7 @@ $(function () {
   });
 });
 
+// FAVORITOS
 document.querySelectorAll(".boton-favorito").forEach(function (boton) {
   boton.addEventListener("click", function () {
     const activo = boton.getAttribute("aria-pressed") === "true";
@@ -122,6 +129,7 @@ document.querySelectorAll(".boton-favorito").forEach(function (boton) {
   });
 });
 
+// FOOTER
 const formBoletin = document.querySelector("#form-boletin");
 const mensajeBoletin = document.querySelector("#mensaje-boletin");
 
