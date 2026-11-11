@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Jost:wght@300..600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
 
@@ -70,7 +70,7 @@
         /* Tipografías */
         --font-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
         --font-texto: "Jost", "Helvetica Neue", Arial, sans-serif;
-        --font-acento: "Instrument Serif", Georgia, serif;
+        --font-acento: "Playfair Display", serif;
 
         /* Animaciones */
         --animate-bajar-menu: bajar-menu 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -237,32 +237,48 @@
 
         <!-- HILOS EN MOVIMIENTO -->
         <svg
-          class="hilo-video pointer-events-none absolute inset-x-0 top-1/2 z-0 w-full -translate-y-1/2"
+          class="hilo-video pointer-events-none absolute inset-x-0 top-1/2 z-0 w-full -translate-y-1/2 max-md:top-[calc(50%+9.5rem)] max-md:h-40"
           viewBox="0 0 1200 200"
+          preserveAspectRatio="none"
           fill="none"
           aria-hidden="true"
         >
-          <g class="animate-ondear">
+          <g class="animate-ondear max-md:hidden">
             <path
               class="hilo-trazo stroke-terracota [animation-delay:1.1s]"
               pathLength="1"
               d="M-20 95 q 100 -90 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
             />
           </g>
-          <g class="animate-ondear-lento">
+          <g class="animate-ondear-lento max-md:hidden">
             <path
               class="hilo-trazo stroke-oliva [animation-delay:1.4s]"
               pathLength="1"
               d="M-120 115 q 100 70 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
             />
           </g>
-          <g class="animate-ondear-rapido">
+          <g class="animate-ondear-rapido max-md:hidden">
             <path
               class="hilo-trazo stroke-amarillo-hilo [animation-delay:1.7s]"
               pathLength="1"
               d="M-60 100 q 100 -140 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0"
             />
           </g>
+          <path
+            class="hilo-trazo"
+            pathLength="1"
+            d="M-20 130 C 120 30, 220 170, 360 100 S 560 20, 660 110 S 860 180, 960 90 S 1130 50, 1220 120"
+          />
+        </svg>
+
+        <!-- HILO SIMÉTRICO RESPECTO AL EJE HORIZONTAL (versión móvil) -->
+        <svg
+          class="hilo-video pointer-events-none absolute inset-x-0 top-[calc(50%-9.5rem)] z-0 h-40 w-full -translate-y-1/2 -scale-y-100 md:hidden"
+          viewBox="0 0 1200 200"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
           <path
             class="hilo-trazo"
             pathLength="1"
@@ -1071,7 +1087,6 @@
                       name="tela"
                       value="lino"
                       data-nombre="Lino arena"
-                      data-precio="18.90"
                       data-muestra="muestra-lino"
                       checked
                     />
@@ -1091,7 +1106,6 @@
                       name="tela"
                       value="vichy"
                       data-nombre="Vichy merienda"
-                      data-precio="9.50"
                       data-muestra="muestra-vichy"
                     />
                     <img
@@ -1110,7 +1124,6 @@
                       name="tela"
                       value="lunares"
                       data-nombre="Lunares verbena"
-                      data-precio="12.50"
                       data-muestra="muestra-lunares"
                     />
                     <img
@@ -1129,7 +1142,6 @@
                       name="tela"
                       value="rayas"
                       data-nombre="Rayas cantábrico"
-                      data-precio="11"
                       data-muestra="muestra-rayas"
                     />
                     <img
@@ -1253,7 +1265,7 @@
                 class="mt-4 divide-y divide-dashed divide-tinta/25 border-y border-dashed border-tinta/25 text-sm dark:divide-crema/25 dark:border-crema/25"
               >
                 <li class="flex justify-between py-2">
-                  <span>Lino arena · 0,8 m</span><span>15,12 €</span>
+                  <span>Lino arena · 0,8 m</span><span>9,60 €</span>
                 </li>
               </ul>
               <div class="mt-5 flex items-end justify-between">
@@ -1263,7 +1275,7 @@
                   form="form-kit"
                   class="font-titulo text-5xl font-extrabold"
                   aria-live="polite"
-                  >21,62 €</output
+                  >16,10 €</output
                 >
               </div>
               <button
@@ -1498,115 +1510,6 @@
               </article>
             </div>
           </div>
-
-          <!-- Preguntas frecuentes (con acordeón jQuery) -->
-          <div class="mt-24 grid gap-10 lg:grid-cols-12">
-            <h3
-              class="font-titulo text-3xl font-extrabold md:text-4xl lg:col-span-4"
-              data-aos="fade-up"
-            >
-              Preguntas frecuentes
-            </h3>
-            <div
-              class="divide-y divide-tinta/20 border-y border-tinta/20 dark:divide-crema/20 dark:border-crema/20 lg:col-span-8"
-              data-aos="fade-up"
-            >
-              <div>
-                <button
-                  type="button"
-                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
-                  aria-expanded="false"
-                  aria-controls="respuesta-1"
-                >
-                  ¿Tengo que traer algo al taller?
-                  <span
-                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
-                    aria-hidden="true"
-                  ></span>
-                </button>
-                <div
-                  id="respuesta-1"
-                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
-                >
-                  <p>
-                    Puedes traer tu ropa o tus telas. Si no tienes nada, compra
-                    el pack del taller en la tienda y vienes con todo listo.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
-                  aria-expanded="false"
-                  aria-controls="respuesta-2"
-                >
-                  ¿Qué lleva el pack del taller?
-                  <span
-                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
-                    aria-hidden="true"
-                  ></span>
-                </button>
-                <div
-                  id="respuesta-2"
-                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
-                >
-                  <p>
-                    La tela ya cortada, hilo a juego, agujas y el patrón del
-                    proyecto. Cuesta desde 12 € y te lo preparamos al momento.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
-                  aria-expanded="false"
-                  aria-controls="respuesta-3"
-                >
-                  ¿Necesito máquina para los talleres?
-                  <span
-                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
-                    aria-hidden="true"
-                  ></span>
-                </button>
-                <div
-                  id="respuesta-3"
-                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
-                >
-                  <p>
-                    No, en la trastienda tenemos cuatro máquinas. Solo trae
-                    ganas (y el vaquero roto, si vienes a sashiko).
-                  </p>
-                </div>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
-                  aria-expanded="false"
-                  aria-controls="respuesta-4"
-                >
-                  ¿Cómo me apunto?
-                  <span
-                    class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
-                    aria-hidden="true"
-                  ></span>
-                </button>
-                <div
-                  id="respuesta-4"
-                  class="respuesta max-w-160 pb-[1.4rem] opacity-80"
-                >
-                  <p>
-                    Con el botón <strong>Reserva tu plaza</strong> de cada
-                    taller, en la tienda, llamando al 912 345 678 o escribiendo
-                    a hola@entrehilos.es. Las plazas son pocas, así que mejor
-                    con tiempo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1629,7 +1532,7 @@
         >
           <button
             type="button"
-            class="absolute top-4 right-4 grid size-10 cursor-pointer place-items-center rounded-full border border-tinta/20 text-2xl leading-none transition duration-300 hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:border-crema/30 dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
+            class="absolute top-4 right-4 grid size-10 cursor-pointer place-items-center rounded-full border border-tinta/20 pb-1 text-2xl leading-none transition duration-300 hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:border-crema/30 dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
             aria-label="Cerrar"
             data-cerrar="true"
           >
@@ -2012,6 +1915,117 @@
         class="py-24 dark:bg-oliva-oscuro md:py-32"
         aria-labelledby="titulo-tienda"
       >
+        <!-- Preguntas frecuentes (con acordeón jQuery) -->
+        <div
+          class="mx-auto mb-24 grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-12"
+        >
+          <h3
+            class="font-titulo text-3xl font-extrabold md:text-4xl lg:col-span-4"
+            data-aos="fade-up"
+          >
+            Preguntas frecuentes
+          </h3>
+          <div
+            class="divide-y divide-tinta/20 border-y border-tinta/20 dark:divide-crema/20 dark:border-crema/20 lg:col-span-8"
+            data-aos="fade-up"
+          >
+            <div>
+              <button
+                type="button"
+                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
+                aria-expanded="false"
+                aria-controls="respuesta-1"
+              >
+                ¿Tengo que traer algo al taller?
+                <span
+                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <div
+                id="respuesta-1"
+                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+              >
+                <p>
+                  Puedes traer tu ropa o tus telas. Si no tienes nada, compra el
+                  pack del taller en la tienda y vienes con todo listo.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
+                aria-expanded="false"
+                aria-controls="respuesta-2"
+              >
+                ¿Qué lleva el pack del taller?
+                <span
+                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <div
+                id="respuesta-2"
+                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+              >
+                <p>
+                  La tela ya cortada, hilo a juego, agujas y el patrón del
+                  proyecto. Cuesta desde 12 € y te lo preparamos al momento.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
+                aria-expanded="false"
+                aria-controls="respuesta-3"
+              >
+                ¿Necesito máquina para los talleres?
+                <span
+                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <div
+                id="respuesta-3"
+                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+              >
+                <p>
+                  No, en la trastienda tenemos cuatro máquinas. Solo trae ganas
+                  (y el vaquero roto, si vienes a sashiko).
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
+                aria-expanded="false"
+                aria-controls="respuesta-4"
+              >
+                ¿Cómo me apunto?
+                <span
+                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <div
+                id="respuesta-4"
+                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+              >
+                <p>
+                  Con el botón <strong>Reserva tu plaza</strong> de cada taller,
+                  en la tienda, llamando al 912 345 678 o escribiendo a
+                  hola@entrehilos.es. Las plazas son pocas, así que mejor con
+                  tiempo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
           <div data-aos="fade-up">
             <p class="text-xs tracking-[0.35em] uppercase">La tienda</p>
