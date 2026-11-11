@@ -5,6 +5,8 @@ const kitProyecto = document.querySelector("#kit-proyecto");
 const kitLista = document.querySelector("#kit-lista");
 const kitTotal = document.querySelector("#kit-total");
 const kitMensaje = document.querySelector("#kit-mensaje");
+const PRECIO_METRO_TELA = 12;
+let totalAnterior = 0;
 
 function formatearPrecio(numero) {
   return numero.toLocaleString("es-ES", {
@@ -31,9 +33,8 @@ function actualizarKit() {
   const proyecto = formKit.querySelector('input[name="proyecto"]:checked');
   const tela = formKit.querySelector('input[name="tela"]:checked');
   const extras = formKit.querySelectorAll('input[name="extra"]:checked');
-
   const metros = parseFloat(proyecto.dataset.metros);
-  const precioTela = metros * parseFloat(tela.dataset.precio);
+  const precioTela = metros * PRECIO_METRO_TELA;
   const precioPatron = parseFloat(proyecto.dataset.precio);
 
   kitLista.innerHTML = "";
@@ -55,11 +56,14 @@ function actualizarKit() {
 
   kitMuestra.src = "assets/muestras/" + tela.dataset.muestra + ".svg";
   kitProyecto.textContent = proyecto.dataset.nombre;
-
   kitTotal.textContent = formatearPrecio(total);
-  kitTotal.classList.remove("animate-saltito");
-  void kitTotal.offsetWidth;
-  kitTotal.classList.add("animate-saltito");
+
+  if (total !== totalAnterior) {
+    kitTotal.classList.remove("animate-saltito");
+    void kitTotal.offsetWidth;
+    kitTotal.classList.add("animate-saltito");
+  }
+  totalAnterior = total;
 
   kitMensaje.classList.add("hidden");
 }
