@@ -89,9 +89,11 @@
     animation-delay: 0.8s;
   }
 
+  /* En móvil, el SVG del hilo rosa se estira en vertical sutilmente para que las ondas sean más pronunciadas */
   @media (width < 48rem) {
     .hilo-video .hilo-trazo {
-      stroke-width: 7;
+      stroke-width: 3.5;
+      vector-effect: non-scaling-stroke;
     }
   }
 
