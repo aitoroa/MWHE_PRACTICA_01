@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -392,13 +392,13 @@
               ></span>
             </h1>
             <p
-              class="mt-8 max-w-md text-lg leading-relaxed text-tinta/80 dark:text-crema/80"
+              class="mt-8 max-w-[40rem] text-lg leading-relaxed text-tinta/80 dark:text-crema/80"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Telas por metros, mercería de la de siempre y kits para que te lo
-              cosas tú. Un rincón del barrio para quienes hacen las cosas con
-              las manos.
+              Un rincón de barrio para quienes disfrutan de la costura. Telas
+              por metros, hilos y todo lo que necesitas para dar forma a tus
+              ideas. Encuéntranos donde siempre, en el corazón de Malasaña.
             </p>
             <div
               class="mt-10 flex flex-wrap gap-3"
@@ -406,9 +406,9 @@
               data-aos-delay="300"
             >
               <a
-                href="#telas"
+                href="#tienda"
                 class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-7 bg-terracota text-crema hover:bg-tinta hover:shadow-lg focus-visible:bg-tinta dark:hover:bg-rosa-hilo dark:hover:text-tinta dark:focus-visible:bg-rosa-hilo dark:focus-visible:text-tinta"
-                >Ver telas
+                >Nuestra historia
                 <span
                   class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
                   aria-hidden="true"
@@ -416,9 +416,9 @@
                 ></a
               >
               <a
-                href="#crea-tu-kit"
+                href="#novedades"
                 class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-7 border-[1.5px] border-current hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
-                >Crea tu kit
+                >Novedades y ofertas
                 <span
                   class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
                   aria-hidden="true"
@@ -2448,9 +2448,70 @@
       <!-- SECCIÓN TIENDA (HORARIO Y UBICACIÓN) -->
       <section
         id="tienda"
-        class="py-24 dark:bg-oliva-oscuro md:py-32"
+        class="pt-16 pb-24 dark:bg-oliva-oscuro md:pt-20 md:pb-32"
         aria-labelledby="titulo-tienda"
       >
+        <!-- Nuestra historia -->
+        <div
+          class="mx-auto mb-24 grid max-w-7xl items-center gap-10 px-5 md:px-8 lg:grid-cols-12 lg:gap-16"
+        >
+          <div class="grid gap-4 lg:col-span-5" data-aos="fade-up">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <img
+                src="assets/foto-antigua.webp"
+                alt="Fotografía antigua de la tienda en los años 90"
+                width="1000"
+                height="750"
+                loading="lazy"
+                class="size-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <img
+                src="assets/foto-nueva.webp"
+                alt="Fotografía actual de la tienda con los propietarios"
+                width="1000"
+                height="750"
+                loading="lazy"
+                class="size-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="100">
+            <h3
+              class="font-titulo text-4xl leading-[0.95] font-extrabold tracking-tight md:text-5xl"
+            >
+              Nuestra
+              <span
+                class="font-acento font-normal text-terracota tracking-normal italic dark:text-rosa-hilo"
+                >historia</span
+              >
+            </h3>
+            <div
+              class="mt-8 max-w-[40rem] space-y-5 text-justify hyphens-auto text-lg leading-relaxed text-tinta/80 dark:text-crema/80"
+            >
+              <p>
+                Entre Hilos nació en los años 60, cuando nuestra abuela decidió
+                abrir una pequeña mercería en el corazón de Malasaña. Su pasión
+                por las telas y la costura hizo que, con los años, la tienda se
+                convirtiera en un pequeño punto de encuentro para los vecinos
+                del barrio.
+              </p>
+              <p>
+                Hoy, somos dos hermanos que hemos decidido darle una nueva vida
+                a la mercería que nos vio crecer. Queremos continuar con el
+                legado de nuestra abuela, adaptando la tienda a los nuevos
+                tiempos sin perder la esencia y la cercanía que siempre la han
+                caracterizado.
+              </p>
+              <p>
+                Aunque haya pasado por muchas etapas, seguimos en el mismo lugar
+                y con la misma ilusión con la que ella empezó.
+              </p>
+            </div>
+          </div>
+        </div>
         <!-- Preguntas frecuentes (con acordeón jQuery) -->
         <div
           class="mx-auto mb-24 grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-12"
@@ -2495,7 +2556,7 @@
                 aria-expanded="false"
                 aria-controls="respuesta-2"
               >
-                ¿Qué lleva el pack del taller?
+                ¿Cuál es vuestra política de devolución?
                 <span
                   class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
                   aria-hidden="true"
@@ -2503,6 +2564,31 @@
               </button>
               <div
                 id="respuesta-2"
+                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
+              >
+                <p>
+                  Se realizará la devolución del importe siempre que el producto
+                  presente defectos de fabricación o daños previos a la compra.
+                  El plazo para solicitar la devolución será de 30 días a partir
+                  de la fecha de compra.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
+                aria-expanded="false"
+                aria-controls="respuesta-3"
+              >
+                ¿Qué lleva el pack del taller?
+                <span
+                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <div
+                id="respuesta-3"
                 class="respuesta max-w-160 pb-[1.4rem] opacity-80"
               >
                 <p>
@@ -2516,32 +2602,9 @@
                 type="button"
                 class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
                 aria-expanded="false"
-                aria-controls="respuesta-3"
-              >
-                ¿Necesito máquina para los talleres?
-                <span
-                  class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
-                  aria-hidden="true"
-                ></span>
-              </button>
-              <div
-                id="respuesta-3"
-                class="respuesta max-w-160 pb-[1.4rem] opacity-80"
-              >
-                <p>
-                  No, en la trastienda tenemos cuatro máquinas. Solo trae ganas
-                  (y el vaquero roto, si vienes a sashiko).
-                </p>
-              </div>
-            </div>
-            <div>
-              <button
-                type="button"
-                class="pregunta group flex w-full cursor-pointer items-center justify-between gap-4 py-[1.4rem] text-left font-titulo text-xl font-semibold transition-colors duration-300 hover:text-terracota focus-visible:text-terracota"
-                aria-expanded="false"
                 aria-controls="respuesta-4"
               >
-                ¿Cómo me apunto?
+                ¿Puedo solicitar telas que no estén disponibles en la tienda?
                 <span
                   class="icono-mas relative size-4 flex-none transition-transform duration-300 group-aria-expanded:rotate-45"
                   aria-hidden="true"
@@ -2552,10 +2615,10 @@
                 class="respuesta max-w-160 pb-[1.4rem] opacity-80"
               >
                 <p>
-                  Con el botón <strong>Reserva tu plaza</strong> de cada taller,
-                  en la tienda, llamando al 912 345 678 o escribiendo a
-                  hola@entrehilos.es. Las plazas son pocas, así que mejor con
-                  tiempo.
+                  ¡Por supuesto! Si buscas una tela específica o necesitas un
+                  corte con unas medidas especiales, ponte en contacto con
+                  nosotros. Haremos lo posible por conseguir lo que necesitas,
+                  siempre sujeto a disponibilidad.
                 </p>
               </div>
             </div>
