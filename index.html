@@ -167,13 +167,41 @@
           </ul>
         </nav>
 
+        <!-- CESTA -->
+        <a
+          href="cesta.html"
+          id="enlace-cesta"
+          class="boton-icono relative grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25 max-lg:order-1 lg:ml-4"
+          aria-label="Ver la cesta"
+        >
+          <svg
+            class="size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z" />
+            <path d="M7.5 10 11 4M16.5 10 13 4M9 14v2.5M12 14v2.5M15 14v2.5" />
+          </svg>
+          <span
+            id="contador-cesta"
+            class="absolute -top-1 -right-1 grid h-5 min-w-5 scale-0 place-items-center rounded-full bg-terracota px-1 text-[0.65rem] leading-none font-semibold text-crema transition-transform duration-300"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
+
         <!-- BOTÓN DE MODO CLARO Y OSCURO -->
         <button
           id="boton-tema"
           type="button"
           aria-pressed="false"
           aria-label="Activar modo oscuro"
-          class="boton-icono grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25 lg:ml-4"
+          class="boton-icono grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25"
         >
           <svg
             class="size-5 transition-transform duration-500 dark:rotate-180"
@@ -198,7 +226,7 @@
           type="button"
           aria-expanded="false"
           aria-controls="menu"
-          class="boton-menu group grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta lg:hidden"
+          class="boton-menu group grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta max-lg:order-2 lg:hidden"
         >
           <span class="grid w-[18px] gap-1" aria-hidden="true">
             <span
@@ -616,7 +644,16 @@
             class="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4"
           >
             <!-- Tela 1 -->
-            <article class="tela group" data-categoria="lino">
+            <article
+              class="tela group"
+              data-categoria="lino"
+              data-id="lino-arena"
+              data-nombre="Lino arena"
+              data-precio="18.90"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-lino.webp"
+              data-detalle="100% lino lavado · 140 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-lino.webp"
@@ -649,6 +686,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta: en escritorio aparece al pasar el ratón por encima del producto -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Lino arena a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -661,7 +724,16 @@
             </article>
 
             <!-- Tela 2 -->
-            <article class="tela group" data-categoria="algodon">
+            <article
+              class="tela group"
+              data-categoria="algodon"
+              data-id="vichy-clasico-rosa"
+              data-nombre="Vichy clásico rosa"
+              data-precio="9.50"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-vichy.webp"
+              data-detalle="Algodón 100% · 150 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-vichy.webp"
@@ -694,6 +766,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Vichy clásico rosa a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -706,7 +804,16 @@
             </article>
 
             <!-- Tela 3 -->
-            <article class="tela group" data-categoria="estampadas">
+            <article
+              class="tela group"
+              data-categoria="estampadas"
+              data-id="lunares-verbena"
+              data-nombre="Lunares verbena"
+              data-precio="12.50"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-lunares.webp"
+              data-detalle="Viscosa estampada · 145 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-lunares.webp"
@@ -739,6 +846,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Lunares verbena a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -751,7 +884,16 @@
             </article>
 
             <!-- Tela 4 -->
-            <article class="tela group" data-categoria="lana">
+            <article
+              class="tela group"
+              data-categoria="lana"
+              data-id="espiga-musgo"
+              data-nombre="Espiga musgo"
+              data-precio="24.00"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-espiga.webp"
+              data-detalle="Paño de lana · 150 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-espiga.webp"
@@ -784,6 +926,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Espiga musgo a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -796,7 +964,16 @@
             </article>
 
             <!-- Tela 5 -->
-            <article class="tela group" data-categoria="algodon">
+            <article
+              class="tela group"
+              data-categoria="algodon"
+              data-id="rayas-marineras"
+              data-nombre="Rayas marineras"
+              data-precio="11.00"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-rayas.webp"
+              data-detalle="Lona de algodón · 140 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-rayas.webp"
@@ -829,6 +1006,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Rayas marineras a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -841,7 +1044,16 @@
             </article>
 
             <!-- Tela 6 -->
-            <article class="tela group" data-categoria="lino">
+            <article
+              class="tela group"
+              data-categoria="lino"
+              data-id="lino-rosa"
+              data-nombre="Lino rosa"
+              data-precio="19.50"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-lino-rosa.webp"
+              data-detalle="100% lino lavado · 140 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-lino-rosa.webp"
@@ -874,6 +1086,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Lino rosa a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -886,7 +1124,16 @@
             </article>
 
             <!-- Tela 7 -->
-            <article class="tela group" data-categoria="estampadas">
+            <article
+              class="tela group"
+              data-categoria="estampadas"
+              data-id="florecitas"
+              data-nombre="Florecitas"
+              data-precio="13.90"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-flores.webp"
+              data-detalle="Popelín estampado · 145 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-flores.webp"
@@ -919,6 +1166,32 @@
                     />
                   </svg>
                 </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Florecitas a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
+                </button>
               </div>
               <h3
                 class="mt-4 font-titulo text-xl font-bold transition-colors group-focus-within:text-terracota md:text-2xl"
@@ -931,7 +1204,16 @@
             </article>
 
             <!-- Tela 8 -->
-            <article class="tela group" data-categoria="lana">
+            <article
+              class="tela group"
+              data-categoria="lana"
+              data-id="escoces-de-invierno"
+              data-nombre="Escocés de invierno"
+              data-precio="22.00"
+              data-unidad="m"
+              data-imagen="assets/muestras-imgs/muestra-escoces.webp"
+              data-detalle="Lana y mezcla · 150 cm"
+            >
               <div class="relative overflow-hidden rounded-sm">
                 <img
                   src="assets/muestras-imgs/muestra-escoces.webp"
@@ -963,6 +1245,32 @@
                       d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
                     />
                   </svg>
+                </button>
+                <!-- Añadir a la cesta -->
+                <button
+                  type="button"
+                  class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-tinta text-crema hover:bg-terracota focus-visible:bg-terracota lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                  aria-label="Añadir Escocés de invierno a la cesta"
+                >
+                  <svg
+                    class="size-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                    />
+                    <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                  </svg>
+                  <span
+                    class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                    >Añadir</span
+                  >
                 </button>
               </div>
               <h3
@@ -1744,7 +2052,15 @@
 
           <div class="swiper slider-novedades mt-14" data-aos="fade-up">
             <div class="swiper-wrapper">
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="lana-merino"
+                data-nombre="Lana merino"
+                data-precio="6.90"
+                data-unidad="ud."
+                data-imagen="assets/muestras-imgs/muestra-merino.webp"
+                data-detalle="Ovillos de 50 g · 12 colores"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-merino.webp"
@@ -1758,6 +2074,32 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
                     >Nuevo</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Lana merino a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1770,7 +2112,15 @@
                 </div>
               </article>
 
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="retales-al-peso"
+                data-nombre="Retales al peso"
+                data-precio="14.00"
+                data-unidad="kg"
+                data-imagen="assets/muestras-imgs/muestra-retales.webp"
+                data-detalle="Todo noviembre · el kilo"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-retales.webp"
@@ -1784,6 +2134,32 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
                     >−30%</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Retales al peso a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1802,7 +2178,15 @@
                 </div>
               </article>
 
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="botones-de-madera"
+                data-nombre="Botones de madera"
+                data-precio="7.50"
+                data-unidad="docena"
+                data-imagen="assets/muestras-imgs/muestra-botones.webp"
+                data-detalle="Semilla de tagua · la docena"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-botones.webp"
@@ -1816,6 +2200,32 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
                     >Nuevo</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Botones de madera a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1830,7 +2240,15 @@
                 </div>
               </article>
 
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="delantal"
+                data-nombre="Delantal"
+                data-precio="8.00"
+                data-unidad="ud."
+                data-imagen="assets/muestras-imgs/muestra-patron.webp"
+                data-detalle="Patrón en papel · tallas XS a XL"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-patron.webp"
@@ -1844,10 +2262,38 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase bg-crema text-[0.7rem] font-medium tracking-[0.15em] text-tinta"
                     >Patrón propio</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Delantal a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
-                    <h3 class="font-titulo text-2xl font-bold">Delantal</h3>
+                    <h3 class="font-titulo text-2xl font-bold">
+                      Delantal clásico
+                    </h3>
                     <p class="text-sm text-crema/65">
                       Patrón en papel · tallas XS a XL
                     </p>
@@ -1856,7 +2302,15 @@
                 </div>
               </article>
 
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="cinta-de-terciopelo"
+                data-nombre="Cinta de terciopelo"
+                data-precio="2.72"
+                data-unidad="m"
+                data-imagen="assets/muestras-imgs/muestra-terciopelo.webp"
+                data-detalle="2,5 cm · el metro"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-terciopelo.webp"
@@ -1870,6 +2324,32 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
                     >−15%</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Cinta de terciopelo a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -1886,7 +2366,15 @@
                 </div>
               </article>
 
-              <article class="swiper-slide group">
+              <article
+                class="swiper-slide group"
+                data-id="kit-de-bordado-japones"
+                data-nombre="Kit de bordado japonés"
+                data-precio="15.30"
+                data-unidad="ud."
+                data-imagen="assets/muestras-imgs/muestra-japones.webp"
+                data-detalle="Aguja, hilo y plantillas"
+              >
                 <div class="relative overflow-hidden rounded-sm">
                   <img
                     src="assets/muestras-imgs/muestra-japones.webp"
@@ -1900,11 +2388,37 @@
                     class="absolute top-4 left-4 z-2 rounded-full px-3 py-1.5 uppercase animate-latido bg-terracota font-titulo text-[0.95rem] font-extrabold text-crema"
                     >−15%</span
                   >
+                  <!-- Añadir a la cesta -->
+                  <button
+                    type="button"
+                    class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full p-2.5 shadow-lg transition duration-300 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                    aria-label="Añadir Kit de bordado japonés a la cesta"
+                  >
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z"
+                      />
+                      <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+                    </svg>
+                    <span
+                      class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                      >Añadir</span
+                    >
+                  </button>
                 </div>
                 <div class="mt-4 flex items-start justify-between gap-4">
                   <div>
                     <h3 class="font-titulo text-2xl font-bold">
-                      Kit de bordado japónes
+                      Kit de bordado japonés
                     </h3>
                     <p class="text-sm text-crema/65">
                       Aguja, hilo y plantillas
@@ -2320,6 +2834,9 @@
       </svg>
     </a>
 
+    <!-- Aviso invisible para lectores de pantalla al añadir a la cesta -->
+    <p id="aviso-cesta" class="sr-only" role="status"></p>
+
     <!-- JS DE LIBRERÍAS -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -2333,6 +2850,7 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/interfaz.js"></script>
+    <script src="js/cesta.js"></script>
     <script src="js/secciones.js"></script>
     <script src="js/librerias.js"></script>
   </body>

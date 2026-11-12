@@ -283,19 +283,25 @@
 }
 
 /* FUERA DE CAPAS (retoques de Swiper) */
-.slider-novedades {
+.slider-novedades,
+.slider-favoritos {
   overflow: visible;
 }
-.slider-novedades .swiper-slide {
+.slider-novedades .swiper-slide,
+.slider-favoritos .swiper-slide {
   height: auto;
 }
-.slider-novedades .swiper-pagination.swiper-pagination-progressbar {
+.slider-novedades .swiper-pagination.swiper-pagination-progressbar,
+.slider-favoritos .swiper-pagination.swiper-pagination-progressbar {
   position: relative;
   top: auto;
   height: 2px;
   background: rgb(244 237 226 / 0.2);
 }
 .slider-novedades
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill,
+.slider-favoritos
   .swiper-pagination-progressbar
   .swiper-pagination-progressbar-fill {
   background: var(--color-rosa-hilo);

@@ -59,12 +59,14 @@ function alHacerScroll() {
 
   cabecera.classList.toggle("cabecera-con-fondo", scrollActual > 20);
 
-  const finVideo = videoPortada.getBoundingClientRect().bottom;
-  const menuAbierto = !menu.classList.contains("hidden");
-  cabecera.classList.toggle(
-    "-translate-y-full",
-    finVideo > 100 && !menuAbierto,
-  );
+  if (videoPortada) {
+    const finVideo = videoPortada.getBoundingClientRect().bottom;
+    const menuAbierto = !menu.classList.contains("hidden");
+    cabecera.classList.toggle(
+      "-translate-y-full",
+      finVideo > 100 && !menuAbierto,
+    );
+  }
 
   const mostrarBoton = scrollActual > 800;
   volverArriba.classList.toggle("opacity-0", !mostrarBoton);
@@ -75,8 +77,10 @@ function alHacerScroll() {
 window.addEventListener("scroll", alHacerScroll, { passive: true });
 alHacerScroll();
 
-const observadorVideo = new ResizeObserver(alHacerScroll);
-observadorVideo.observe(videoPortada);
+if (videoPortada) {
+  const observadorVideo = new ResizeObserver(alHacerScroll);
+  observadorVideo.observe(videoPortada);
+}
 
 // ENLACE ACTIVO DEL MENÚ
 const secciones = document.querySelectorAll("main section[id]");
@@ -118,14 +122,6 @@ $(function () {
         $(this).stop(true, true).fadeOut(200);
       }
     });
-  });
-});
-
-// FAVORITOS
-document.querySelectorAll(".boton-favorito").forEach(function (boton) {
-  boton.addEventListener("click", function () {
-    const activo = boton.getAttribute("aria-pressed") === "true";
-    boton.setAttribute("aria-pressed", !activo);
   });
 });
 

@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu cesta · Entre Hilos</title>
+    <meta
+      name="description"
+      content="Tu cesta de Entre Hilos: revisa tus productos, elige envío a casa o recogida en tienda y finaliza el pedido."
+    />
+
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png?v=2"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg?v=2" />
+    <link rel="shortcut icon" href="favicon/favicon.ico?v=2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png?v=2"
+    />
+    <link rel="manifest" href="favicon/manifest.json?v=2" />
+
+    <!-- TIPOGRAFÍAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS DE LIBRERÍAS (AOS, SWIPER) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.css"
+    />
+
+    <!-- CSS PROPIO -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- TAILWIND v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- SISTEMA DE DISEÑO -->
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      @theme static {
+        /* Paleta principal */
+        --color-crema: #f4ede2;
+        --color-terracota: #9f4b33;
+        --color-oliva: #777b55;
+        --color-tinta: #292521;
+        --color-rosa-hilo: #c98e94;
+
+        /* Auxiliares (derivados de la paleta principal) */
+        --color-lino: #e9dfcf;
+        --color-noche: #1c1916;
+        --color-oliva-oscuro: #4e5137;
+        --color-amarillo-hilo: #ebcf85;
+
+        /* Tipografías */
+        --font-titulo: "Bricolage Grotesque", "Arial Black", sans-serif;
+        --font-texto: "Jost", "Helvetica Neue", Arial, sans-serif;
+        --font-acento: "Playfair Display", serif;
+
+        /* Animaciones */
+        --animate-bajar-menu: bajar-menu 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+        --animate-bajar-linea: bajar-linea 2s ease-in-out infinite;
+        --animate-flotar: flotar 7s ease-in-out infinite;
+        --animate-flotar-lento: flotar 9s ease-in-out -2s infinite;
+        --animate-flotar-rapido: flotar 6s ease-in-out -4s infinite;
+        --animate-cinta: desplazar-cinta 35s linear infinite;
+        --animate-balancear: balancear 1.2s ease-in-out;
+        --animate-latido: latido 2.4s ease-in-out infinite;
+        --animate-latido-corto: latido 0.5s ease;
+        --animate-girar: girar 22s linear infinite;
+        --animate-saltito: saltito 0.45s ease;
+        --animate-ondear: ondear-hilo 12s linear infinite;
+        --animate-ondear-lento: ondear-hilo 18s linear infinite reverse;
+        --animate-ondear-rapido: ondear-hilo 9s linear infinite;
+      }
+    </style>
+
+    <script>
+      try {
+        if (localStorage.getItem("tema") === "oscuro") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (error) {}
+    </script>
+  </head>
+
+  <body
+    class="bg-crema font-texto text-tinta antialiased transition-colors duration-500 dark:bg-noche dark:text-crema"
+  >
+    <a
+      href="#contenido"
+      class="absolute -top-16 left-4 z-100 rounded-full bg-tinta px-4 py-2.5 text-crema transition-[top] duration-200 focus:top-4"
+      >Saltar al contenido</a
+    >
+
+    <!-- CABECERA Y NAVEGACIÓN -->
+    <header
+      id="cabecera"
+      class="cabecera fixed inset-x-0 top-0 z-50 transition-[translate,box-shadow] duration-400 focus-within:translate-y-0"
+    >
+      <div class="mx-auto flex max-w-7xl items-center gap-3 px-5 py-4 md:px-8">
+        <a
+          href="index.html"
+          class="logo mr-auto font-titulo text-2xl leading-none font-extrabold tracking-tight lowercase md:text-3xl"
+          aria-label="Entre Hilos, volver al inicio"
+          >entre hilos<span
+            class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo"
+            aria-hidden="true"
+          ></span
+        ></a>
+
+        <nav aria-label="Principal">
+          <ul
+            id="menu"
+            class="animate-bajar-menu lg:animate-none absolute inset-x-0 top-full hidden border-b border-tinta/15 bg-crema/88 px-5 pt-4 pb-8 backdrop-blur-md dark:border-crema/15 dark:bg-noche/88 lg:static lg:flex lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none lg:dark:bg-transparent"
+          >
+            <li>
+              <a
+                href="index.html#telas"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Telas</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#crea-tu-kit"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Crea tu kit</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#talleres"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Talleres</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#novedades"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >Novedades</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#tienda"
+                class="enlace-menu block py-2 font-titulo text-4xl font-bold lowercase lg:py-1 lg:font-texto lg:text-xs lg:font-medium lg:tracking-[0.25em] lg:uppercase"
+                >La tienda</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- CESTA -->
+        <a
+          href="cesta.html"
+          id="enlace-cesta"
+          aria-current="page"
+          class="boton-icono relative grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25 max-lg:order-1 lg:ml-4"
+          aria-label="Ver la cesta"
+        >
+          <svg
+            class="size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z" />
+            <path d="M7.5 10 11 4M16.5 10 13 4M9 14v2.5M12 14v2.5M15 14v2.5" />
+          </svg>
+          <span
+            id="contador-cesta"
+            class="absolute -top-1 -right-1 grid h-5 min-w-5 scale-0 place-items-center rounded-full bg-terracota px-1 text-[0.65rem] leading-none font-semibold text-crema transition-transform duration-300"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
+
+        <!-- BOTÓN DE MODO CLARO Y OSCURO -->
+        <button
+          id="boton-tema"
+          type="button"
+          aria-pressed="false"
+          aria-label="Activar modo oscuro"
+          class="boton-icono grid size-11 place-items-center rounded-full border border-tinta/20 transition hover:border-terracota hover:text-terracota focus-visible:border-terracota dark:border-crema/25"
+        >
+          <svg
+            class="size-5 transition-transform duration-500 dark:rotate-180"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+            <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" />
+          </svg>
+        </button>
+
+        <!-- BOTÓN DEL MENÚ MÓVIL -->
+        <button
+          id="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          class="boton-menu group grid size-11 place-items-center rounded-full bg-tinta text-crema transition hover:bg-terracota focus-visible:bg-terracota dark:bg-crema dark:text-tinta max-lg:order-2 lg:hidden"
+        >
+          <span class="grid w-[18px] gap-1" aria-hidden="true">
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:translate-y-1.5 group-aria-expanded:rotate-45"
+            ></span>
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:opacity-0"
+            ></span>
+            <span
+              class="block h-0.5 rounded-full bg-current transition duration-300 group-aria-expanded:-translate-y-1.5 group-aria-expanded:-rotate-45"
+            ></span>
+          </span>
+          <span id="texto-boton-menu" class="sr-only">Abrir menú</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="contenido" class="pt-28 md:pt-36">
+      <!-- CESTA: productos, forma de entrega y total -->
+      <section class="pb-24 md:pb-32" aria-labelledby="titulo-cesta">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div data-aos="fade-up">
+            <p class="text-xs tracking-[0.35em] uppercase">Tu cesta</p>
+            <h1
+              id="titulo-cesta"
+              class="mt-5 font-titulo text-5xl leading-[0.95] font-extrabold tracking-tight md:text-7xl"
+            >
+              Lo que te
+              <span
+                class="font-acento font-normal text-terracota tracking-normal italic dark:text-rosa-hilo"
+                >llevas</span
+              >
+            </h1>
+          </div>
+
+          <div class="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <!-- Lista de productos -->
+            <div class="lg:col-span-7">
+              <h2 class="sr-only">Productos de la cesta</h2>
+              <ul
+                id="lista-cesta"
+                class="divide-y divide-tinta/15 border-y border-tinta/15 empty:hidden dark:divide-crema/15 dark:border-crema/15"
+              ></ul>
+
+              <!-- Mensaje de cesta vacía -->
+              <div
+                id="cesta-vacia"
+                class="hidden rounded-sm border border-dashed border-tinta/30 px-6 py-14 text-center dark:border-crema/30"
+              >
+                <p class="font-titulo text-3xl font-extrabold">
+                  Tu cesta está vacía
+                </p>
+                <p class="mt-3 text-tinta/70 dark:text-crema/70">
+                  Pasa el ratón por una tela o una novedad y pulsa «Añadir».
+                </p>
+                <a
+                  href="index.html#telas"
+                  class="group mt-8 inline-flex items-center gap-2.5 rounded-full bg-terracota px-7 py-4 text-xs font-medium tracking-[0.2em] text-crema uppercase transition duration-300 hover:-translate-y-0.5 hover:bg-tinta hover:shadow-lg focus-visible:-translate-y-0.5 focus-visible:bg-tinta active:translate-y-0 dark:hover:bg-rosa-hilo dark:hover:text-tinta dark:focus-visible:bg-rosa-hilo dark:focus-visible:text-tinta"
+                >
+                  Ver telas
+                  <span
+                    class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                    aria-hidden="true"
+                    >→</span
+                  >
+                </a>
+              </div>
+
+              <a
+                href="index.html#telas"
+                class="mt-8 inline-block text-sm underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
+                >← Seguir comprando</a
+              >
+            </div>
+
+            <!-- Resumen del pedido -->
+            <aside class="lg:col-span-5" aria-labelledby="titulo-resumen">
+              <form
+                id="form-pedido"
+                class="sticky top-28 rounded-sm bg-lino p-6 dark:bg-tinta md:p-8"
+                novalidate
+              >
+                <h2
+                  id="titulo-resumen"
+                  class="font-titulo text-3xl font-extrabold uppercase"
+                >
+                  Resumen
+                </h2>
+
+                <!-- Envío a casa o recogida en tienda -->
+                <fieldset class="mt-6">
+                  <legend class="text-xs tracking-[0.25em] uppercase">
+                    Entrega
+                  </legend>
+                  <div class="mt-3 grid gap-2">
+                    <label
+                      class="flex cursor-pointer items-center justify-between gap-4 rounded-full border border-tinta/25 px-5 py-3 text-[0.95rem] transition duration-200 hover:border-tinta has-checked:border-tinta has-checked:bg-tinta has-checked:text-crema has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo dark:border-crema/30 dark:hover:border-crema dark:has-checked:border-crema dark:has-checked:bg-crema dark:has-checked:text-tinta"
+                    >
+                      <span>
+                        <input
+                          class="sr-only"
+                          type="radio"
+                          name="entrega"
+                          value="domicilio"
+                          checked
+                        />
+                        Envío a domicilio
+                      </span>
+                      <span>2,95 €</span>
+                    </label>
+                    <label
+                      class="flex cursor-pointer items-center justify-between gap-4 rounded-full border border-tinta/25 px-5 py-3 text-[0.95rem] transition duration-200 hover:border-tinta has-checked:border-tinta has-checked:bg-tinta has-checked:text-crema has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-rosa-hilo dark:border-crema/30 dark:hover:border-crema dark:has-checked:border-crema dark:has-checked:bg-crema dark:has-checked:text-tinta"
+                    >
+                      <span>
+                        <input
+                          class="sr-only"
+                          type="radio"
+                          name="entrega"
+                          value="tienda"
+                        />
+                        Recoger en tienda
+                      </span>
+                      <span>Gratis</span>
+                    </label>
+                  </div>
+                  <p class="mt-3 text-xs text-tinta/65 dark:text-crema/65">
+                    Recogida en Calle del Pez, 18 · lista en 24 horas
+                  </p>
+                </fieldset>
+
+                <dl
+                  class="mt-6 divide-y divide-dashed divide-tinta/25 border-y border-dashed border-tinta/25 text-sm dark:divide-crema/25 dark:border-crema/25"
+                >
+                  <div class="flex justify-between py-2">
+                    <dt>Subtotal</dt>
+                    <dd id="cesta-subtotal">0,00 €</dd>
+                  </div>
+                  <div class="flex justify-between py-2">
+                    <dt>Envío</dt>
+                    <dd id="cesta-envio">Gratis</dd>
+                  </div>
+                </dl>
+
+                <div class="mt-5 flex items-end justify-between gap-4">
+                  <span class="text-xs tracking-[0.25em] uppercase"
+                    >Total a pagar</span
+                  >
+                  <output
+                    id="cesta-total"
+                    class="font-titulo text-5xl font-extrabold"
+                    aria-live="polite"
+                    >0,00 €</output
+                  >
+                </div>
+
+                <button
+                  id="boton-pagar"
+                  type="submit"
+                  class="group mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-terracota px-7 py-4 text-xs font-medium tracking-[0.2em] text-crema uppercase transition duration-300 hover:-translate-y-0.5 hover:bg-tinta hover:shadow-lg focus-visible:-translate-y-0.5 focus-visible:bg-tinta active:translate-y-0 disabled:pointer-events-none disabled:opacity-40 dark:hover:bg-rosa-hilo dark:hover:text-tinta dark:focus-visible:bg-rosa-hilo dark:focus-visible:text-tinta"
+                >
+                  Finalizar compra
+                  <span
+                    class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                    aria-hidden="true"
+                    >→</span
+                  >
+                </button>
+                <p
+                  id="mensaje-pedido"
+                  class="mt-4 hidden text-center text-sm text-oliva dark:text-rosa-hilo"
+                  role="status"
+                ></p>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAVORITOS: slider con Swiper -->
+      <section
+        id="favoritos"
+        class="overflow-hidden bg-oliva py-16 text-crema dark:bg-oliva-oscuro md:py-20"
+        aria-labelledby="titulo-favoritos"
+      >
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+          <div
+            class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+            data-aos="fade-up"
+          >
+            <h2
+              id="titulo-favoritos"
+              class="font-titulo text-4xl leading-[0.95] font-extrabold tracking-tight md:text-5xl"
+            >
+              Tus
+              <span
+                class="font-acento font-normal tracking-normal text-terracota italic"
+                >favoritos</span
+              >
+            </h2>
+            <div id="flechas-favoritos" class="flex gap-2">
+              <button
+                id="favoritos-anterior"
+                type="button"
+                class="grid size-13 place-items-center rounded-full border border-crema/35 transition-colors duration-300 hover:border-crema hover:bg-crema hover:text-tinta focus-visible:border-crema focus-visible:bg-crema focus-visible:text-tinta disabled:pointer-events-none disabled:opacity-30"
+                aria-label="Favorito anterior"
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                id="favoritos-siguiente"
+                type="button"
+                class="grid size-13 place-items-center rounded-full border border-crema/35 transition-colors duration-300 hover:border-crema hover:bg-crema hover:text-tinta focus-visible:border-crema focus-visible:bg-crema focus-visible:text-tinta disabled:pointer-events-none disabled:opacity-30"
+                aria-label="Favorito siguiente"
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="bloque-favoritos" class="swiper slider-favoritos mt-10">
+            <div id="lista-favoritos" class="swiper-wrapper"></div>
+            <div class="swiper-pagination mt-8"></div>
+          </div>
+
+          <!-- Mensaje por si todavía no hay favoritos -->
+          <p
+            id="favoritos-vacio"
+            class="mt-6 hidden max-w-lg text-lg text-crema/85"
+          >
+            Todavía no tienes favoritos. Pulsa el corazón de las telas que te
+            gusten y aparecerán aquí.
+            <a
+              href="index.html#telas"
+              class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-rosa-hilo hover:decoration-[3px] focus-visible:text-rosa-hilo"
+              >Ver telas</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- PLANTILLAS -->
+      <template id="plantilla-producto">
+        <li class="flex gap-4 py-6 md:gap-6">
+          <img
+            class="producto-imagen aspect-[4/5] w-20 flex-none rounded-sm object-cover md:w-28"
+            src="assets/muestras-imgs/muestra-lino.webp"
+            alt=""
+            width="400"
+            height="500"
+          />
+          <div class="flex min-w-0 flex-1 flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <h3
+                  class="producto-nombre font-titulo text-xl font-bold md:text-2xl"
+                >
+                  Producto
+                </h3>
+                <p
+                  class="producto-detalle text-sm text-tinta/65 dark:text-crema/65"
+                ></p>
+                <p class="producto-precio mt-1 text-sm"></p>
+              </div>
+              <p
+                class="producto-total font-titulo text-xl font-bold whitespace-nowrap"
+              ></p>
+            </div>
+            <div class="mt-auto flex items-center justify-between gap-4 pt-4">
+              <div
+                class="inline-flex items-center rounded-full border border-tinta/25 dark:border-crema/30"
+              >
+                <button
+                  type="button"
+                  class="boton-restar grid size-9 cursor-pointer place-items-center rounded-full text-lg transition hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
+                  aria-label="Uno menos"
+                >
+                  −
+                </button>
+                <span
+                  class="producto-cantidad min-w-16 text-center text-sm"
+                ></span>
+                <button
+                  type="button"
+                  class="boton-sumar grid size-9 cursor-pointer place-items-center rounded-full text-lg transition hover:bg-tinta hover:text-crema focus-visible:bg-tinta focus-visible:text-crema dark:hover:bg-crema dark:hover:text-tinta dark:focus-visible:bg-crema dark:focus-visible:text-tinta"
+                  aria-label="Uno más"
+                >
+                  +
+                </button>
+              </div>
+              <button
+                type="button"
+                class="boton-quitar cursor-pointer text-xs tracking-[0.2em] uppercase underline decoration-1 underline-offset-4 transition hover:text-terracota focus-visible:text-terracota dark:hover:text-rosa-hilo dark:focus-visible:text-rosa-hilo"
+              >
+                Quitar
+              </button>
+            </div>
+          </div>
+        </li>
+      </template>
+
+      <!-- Diapositiva de un favorito -->
+      <template id="plantilla-favorito">
+        <article class="swiper-slide group">
+          <div class="relative overflow-hidden rounded-sm">
+            <img
+              class="favorito-imagen aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              src="assets/muestras-imgs/muestra-lino.webp"
+              alt=""
+              width="400"
+              height="500"
+            />
+            <span
+              class="absolute top-3 left-3 z-2 grid size-8 place-items-center rounded-full bg-crema text-terracota"
+              aria-hidden="true"
+            >
+              <svg
+                class="size-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+                />
+              </svg>
+            </span>
+            <!-- Añadir a la cesta -->
+            <button
+              type="button"
+              class="boton-cesta absolute right-3 bottom-3 z-10 inline-flex items-center gap-2 rounded-full bg-crema p-2.5 text-tinta shadow-lg transition duration-300 hover:bg-rosa-hilo focus-visible:bg-rosa-hilo lg:translate-y-2 lg:px-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+              aria-label="Añadir a la cesta"
+            >
+              <svg
+                class="size-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 10h18l-2 8.4a2 2 0 0 1-2 1.6H7a2 2 0 0 1-2-1.6Z" />
+                <path d="M7.5 10 11 4M16.5 10 13 4M12 12.5v5M9.5 15h5" />
+              </svg>
+              <span
+                class="texto-boton-cesta hidden text-[0.7rem] font-medium tracking-[0.15em] uppercase lg:inline"
+                >Añadir</span
+              >
+            </button>
+          </div>
+          <div class="mt-3">
+            <h3
+              class="favorito-nombre font-titulo text-xl leading-tight font-bold"
+            >
+              Producto
+            </h3>
+            <p class="favorito-detalle mt-1 text-sm text-crema/70"></p>
+            <p class="favorito-precio mt-2 font-titulo text-base font-bold"></p>
+          </div>
+        </article>
+      </template>
+    </main>
+
+    <!-- FOOTER  -->
+    <footer class="overflow-hidden bg-tinta pt-20 text-crema dark:bg-noche">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="lg:col-span-2">
+            <h2 class="font-titulo text-3xl font-extrabold">
+              Para no perderte nada, apúntate al newsletter
+            </h2>
+            <form id="form-boletin" class="mt-6 flex max-w-md gap-2">
+              <label for="email-boletin" class="sr-only"
+                >Tu correo electrónico</label
+              >
+              <input
+                id="email-boletin"
+                type="email"
+                name="email"
+                required
+                placeholder="tu@correo.com"
+                autocomplete="email"
+                class="min-w-0 flex-1 rounded-full border border-crema/30 bg-transparent px-5 py-3 placeholder:text-crema/50 focus:border-rosa-hilo focus:outline-none"
+              />
+              <button
+                type="submit"
+                class="group inline-flex items-center gap-2.5 rounded-full py-4 text-xs font-medium tracking-[0.2em] uppercase transition duration-300 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 active:translate-y-0 px-5 bg-crema text-tinta hover:bg-rosa-hilo focus-visible:bg-rosa-hilo"
+              >
+                Apuntarme
+                <span
+                  class="inline-block w-0 overflow-hidden transition-[width] duration-300 group-hover:w-[1em] group-focus-visible:w-[1em]"
+                  aria-hidden="true"
+                  >→</span
+                >
+              </button>
+            </form>
+            <p
+              id="mensaje-boletin"
+              class="mt-3 hidden text-sm text-rosa-hilo"
+              role="status"
+            ></p>
+          </div>
+
+          <div>
+            <h2 class="text-xs tracking-[0.25em] uppercase opacity-70">
+              Visítanos
+            </h2>
+            <p class="mt-4">
+              Calle del Pez, 18<br />28004 Madrid<br />L–V 10–14 · 17–20:30<br />S
+              10:30–14:30
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-xs tracking-[0.25em] uppercase opacity-70">
+              Síguenos
+            </h2>
+            <ul class="mt-4 space-y-1">
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.pinterest.com/"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
+                  >Pinterest</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hola@entrehilos.es"
+                  class="underline decoration-1 underline-offset-4 transition-all duration-300 hover:text-terracota hover:decoration-rosa-hilo hover:decoration-[3px] focus-visible:text-terracota"
+                  >hola@entrehilos.es</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo gigante -->
+      <div class="relative mt-20" aria-hidden="true">
+        <p
+          class="-mb-[0.12em] px-5 font-titulo text-[31vw] leading-[0.8] font-extrabold tracking-tighter lowercase md:px-0 md:text-center md:text-[15.5vw] md:whitespace-nowrap"
+        >
+          <span class="block md:inline">entre</span> hilos<span
+            class="inline-block size-[0.2em] ml-[0.04em] rounded-full bg-rosa-hilo"
+          ></span>
+        </p>
+        <svg
+          class="hilo-footer pointer-events-none absolute inset-x-0 top-1/4 w-full"
+          viewBox="0 0 1200 200"
+          fill="none"
+        >
+          <path
+            class="hilo-trazo"
+            pathLength="1"
+            d="M-20 120 C 100 40, 160 180, 300 110 S 520 30, 640 120 S 860 190, 960 90 S 1120 60, 1220 130"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="relative z-10 border-t border-crema/15 bg-tinta dark:bg-noche"
+      >
+        <div
+          class="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-crema/60 md:flex-row md:justify-between md:px-8"
+        >
+          <p>
+            © <span id="anio">2026</span> Entre Hilos · Mercería y telas en
+            Malasaña
+          </p>
+          <p>
+            Práctica MWHE · Aitor Ochoa Arrastio y Micaela Noriega Meriño · G41
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#contenido"
+      id="volver-arriba"
+      class="pointer-events-none fixed right-5 bottom-5 z-40 grid size-12 translate-y-4 opacity-0 transition duration-300 place-items-center rounded-full bg-terracota text-crema shadow-lg hover:bg-tinta focus-visible:bg-tinta dark:hover:bg-crema dark:hover:text-tinta"
+      aria-label="Volver arriba"
+    >
+      <svg
+        class="size-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </a>
+
+    <!-- Aviso invisible para lectores de pantalla al añadir a la cesta -->
+    <p id="aviso-cesta" class="sr-only" role="status"></p>
+
+    <!-- JS DE LIBRERÍAS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- AOS y Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14/swiper-bundle.min.js"></script>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/interfaz.js"></script>
+    <script src="js/cesta.js"></script>
+    <script src="js/librerias.js"></script>
+  </body>
+</html>
